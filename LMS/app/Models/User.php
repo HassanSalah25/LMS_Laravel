@@ -10,6 +10,15 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    protected $table = 'admin_user';
+	public $timestamps = true;
+
+	// use SoftDeletingTrait;
+
+	// protected $dates = ['deleted_at'];
+	// protected $fillable = array('name', 'email', 'mobile', 'password', 'role_id', 'is_active');
+
+   
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -33,12 +42,12 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    // /**
+    //  * The attributes that should be cast.
+    //  *
+    //  * @var array<string, string>
+    //  */
+    // protected $casts = [
+    //     'email_verified_at' => 'datetime',
+    // ];
 }
