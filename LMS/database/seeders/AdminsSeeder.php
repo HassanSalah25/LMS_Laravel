@@ -3,9 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-//use App\Models\Admin;
-use app\Models\Admin;
-class AdminSeeder extends Seeder
+use App\Models\Admin;
+ class AdminSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,6 +15,7 @@ class AdminSeeder extends Seeder
     {
         //
         //use factory here to fill the data
-        Admin::factory()->times(100)->create();
+        Admin::factory(100)->create();
+//        Admin::factory()->times(10)->create();
     }
 }

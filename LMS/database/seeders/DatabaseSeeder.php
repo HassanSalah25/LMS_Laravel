@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 // MAIN Seeder Class by:laravel
 
+use App\Models\Admin;
+
 // #inheret from super class
 class DatabaseSeeder extends Seeder
 {
@@ -17,7 +19,11 @@ class DatabaseSeeder extends Seeder
     {
 
         // # call the seeder for your table 
-         $this->call(AdminsSeeder::class);
+         //$this->call(AdminsSeeder::class);
+         Admin::factory()->times(10)->create();
+         Batch::factory()->times(10)->create();
+         
+         
          $this->call(BatchsSeeder::class);
          $this->call(CategoriesSeeder::class);
          $this->call(CertficationsSeeder::class);

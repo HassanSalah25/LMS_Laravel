@@ -21,22 +21,17 @@ class AdminFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'remember_token' => Str::random(10),
             'mobile' => $this->faker->numerify('+20-##########'),
-                        //Example (test): $faker->numerify('##########'); // "3579786681"
-            'email_verified_at' => now(),
-            //password = password
-         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-          'remember_token' => Str::random(10),
-            //
-            // $table->id();
-            // $table->timestamps();
-			// $table->string('name');
-			// $table->string('email')->unique();
-			// $table->string('mobile');
-			// $table->string('password');
-			// $table->integer('role_id');
-			// $table->tinyInteger('is_active')->default('1');
-			// $table->softDeletes();
+                //Example (test): $faker->numerify('##########'); // "3579786681"
+        //  $table->string('name');
+        //  $table->string('email')->unique();
+        //  $table->string('password');
+        //  $table->rememberToken();
+        //  $table->timestamps();
+        //  $table->string('mobile')->nullable();
+         
         ];
     }
 

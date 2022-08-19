@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use App\Models\Batch;
 class BatchSeeder extends Seeder
 {
     /**
@@ -15,6 +15,6 @@ class BatchSeeder extends Seeder
     {
         //
         //use factory here to fill the data
-        User::factory()->times(100)->create();
+        Batch::factory()->times(100)->create();
     }
 }

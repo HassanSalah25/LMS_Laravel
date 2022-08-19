@@ -15,14 +15,16 @@ class CreateAdminsTable extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
-			$table->string('name');
-			$table->string('email')->unique();
-			$table->string('mobile');
-			$table->string('password');
-			$table->integer('role_id');
-			$table->tinyInteger('is_active')->default('1');
-			$table->softDeletes();
+            $table->string('mobile');
+			// $table->string('password');
+			// $table->integer('role_id');
+			// $table->tinyInteger('is_active')->default('1');
+			// $table->softDeletes();
         });
     }
 
