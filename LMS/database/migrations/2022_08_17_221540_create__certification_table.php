@@ -33,3 +33,6 @@ class CreateCertificationTable extends Migration
         Schema::dropIfExists('_certification');
     }
 }
+
+
+
