@@ -16,6 +16,7 @@ class CreateLessonsTable extends Migration
         Schema::create('lessons', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+<<<<<<< HEAD
             $table->strings('module_id');
             $table->strings('name');
             $table->strings('description');
@@ -23,6 +24,8 @@ class CreateLessonsTable extends Migration
             $table->strings('is_active');
             
             
+=======
+>>>>>>> parent of 9ca842c (add new  and relaions DB)
         });
     }
 

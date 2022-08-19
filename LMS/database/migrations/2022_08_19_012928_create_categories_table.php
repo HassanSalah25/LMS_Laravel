@@ -16,9 +16,12 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+<<<<<<< HEAD
             $table->strings('name');
             $table->strings('postion');
             $table->strings('is_active');
+=======
+>>>>>>> parent of 9ca842c (add new  and relaions DB)
         });
     }
 

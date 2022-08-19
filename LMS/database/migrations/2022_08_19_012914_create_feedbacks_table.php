@@ -16,6 +16,7 @@ class CreateFeedbacksTable extends Migration
         Schema::create('feedbacks', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+<<<<<<< HEAD
             $table->strings('course_id');
             $table->strings('batch_id');
             $table->strings('staff_id');
@@ -26,6 +27,8 @@ class CreateFeedbacksTable extends Migration
             $table->strings('is_active');
             
              
+=======
+>>>>>>> parent of 9ca842c (add new  and relaions DB)
         });
     }
 

@@ -16,12 +16,15 @@ class CreateModulesTable extends Migration
         Schema::create('modules', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+<<<<<<< HEAD
             $table->strings('course_id');
             $table->strings('name');
             $table->strings('position');
             $table->strings('is_active');
             $table->strings('created_by');
             
+=======
+>>>>>>> parent of 9ca842c (add new  and relaions DB)
         });
     }
 
