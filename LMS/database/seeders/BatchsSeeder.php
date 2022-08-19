@@ -14,5 +14,7 @@ class BatchSeeder extends Seeder
     public function run()
     {
         //
+        //use factory here to fill the data
+        User::factory()->times(100)->create();
     }
 }
