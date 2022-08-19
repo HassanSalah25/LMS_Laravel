@@ -1,13 +1,16 @@
 <?php
 
 namespace Database\Factories;
-
+use App\Models\Admin;
 use Illuminate\Database\Eloquent\Factories\Factory;
- 
- use Illuminate\Support\Str;
+use Illuminate\Support\Str;
 
 class AdminFactory extends Factory
 {
+    //the name of the factory corresponding model
+        //Note:  you must give the entire PATH 
+    protected $model = Admin::class;
+
     /**
      * Define the model's default state.
      *
@@ -20,11 +23,10 @@ class AdminFactory extends Factory
             'email' => $this->faker->unique()->safeEmail(),
             'mobile' => $this->faker->numerify('+20-##########'),
                         //Example (test): $faker->numerify('##########'); // "3579786681"
-
             'email_verified_at' => now(),
             //password = password
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-           'remember_token' => Str::random(10),
+         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+          'remember_token' => Str::random(10),
             //
             // $table->id();
             // $table->timestamps();
@@ -36,5 +38,19 @@ class AdminFactory extends Factory
 			// $table->tinyInteger('is_active')->default('1');
 			// $table->softDeletes();
         ];
+    }
+
+       /**
+     * Indicate that the model's email address should be unverified.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function unverified()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'email_verified_at' => null,
+            ];
+        });
     }
 }
