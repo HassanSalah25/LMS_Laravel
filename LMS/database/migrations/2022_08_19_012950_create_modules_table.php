@@ -17,6 +17,9 @@ class CreateModulesTable extends Migration
             $table->id();
             $table->timestamps();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 0c72dba (modify migeration)
             $table->strings('course_id');
             $table->strings('name');
             $table->strings('position');

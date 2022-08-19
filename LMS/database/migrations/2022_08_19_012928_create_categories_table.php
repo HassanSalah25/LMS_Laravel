@@ -17,11 +17,17 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->timestamps();
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->strings('name');
             $table->strings('postion');
             $table->strings('is_active');
 =======
 >>>>>>> parent of 9ca842c (add new  and relaions DB)
+=======
+            $table->strings('name');
+            $table->strings('postion');
+            $table->strings('is_active');
+>>>>>>> parent of 0c72dba (modify migeration)
         });
     }
 
