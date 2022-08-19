@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+// MAIN Seeder Class by:laravel
 
 // #inheret from super class
 class DatabaseSeeder extends Seeder
@@ -17,6 +17,17 @@ class DatabaseSeeder extends Seeder
     {
 
         // # call the seeder for your table 
+         $this->call(AdminsSeeder::class);
+         $this->call(BatchsSeeder::class);
+         $this->call(CategoriesSeeder::class);
+         $this->call(CertficationsSeeder::class);
+         $this->call(courses_categoriesSeeder::class);
+         $this->call(CoursesSeeder::class);
+         $this->call(EnrollsSeeder::class);
+         $this->call(FeedbacksSeeder::class);
+         $this->call(LessonsSeeder::class);
+         $this->call(ModulesSeeder::class);
+         $this->call(StaffsSeeder::class);
          $this->call(UsersSeeder::class);
 
         // \App\Models\User::factory(10)->create();
