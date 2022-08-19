@@ -16,28 +16,13 @@ class CreateModulesTable extends Migration
         Schema::create('modules', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 0c72dba (modify migeration)
-            $table->strings('course_id');
-            $table->strings('name');
-            $table->strings('position');
-            $table->strings('is_active');
-            $table->strings('created_by');
-            
-=======
->>>>>>> parent of 9ca842c (add new  and relaions DB)
-        });
+             $table->string('course_id');
+            $table->string('name');
+            $table->string('position');
+            $table->string('is_active');
+            $table->string('created_by');
+  });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('modules');
-    }
+   
 }

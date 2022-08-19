@@ -1,43 +1,54 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 
-class CreateCategoriesTable extends Migration
-{
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->id();
+class CreateCategoriesTable extends Migration {
+
+	public function up()
+	{
+		Schema::create('course_category', function(Blueprint $table) {
+			$table->id();
+			$table->integer('position')->unsigned();
+			$table->string('name');
+			$table->string('is_active');
+
             $table->timestamps();
-<<<<<<< HEAD
-<<<<<<< HEAD
-            $table->strings('name');
-            $table->strings('postion');
-            $table->strings('is_active');
-=======
->>>>>>> parent of 9ca842c (add new  and relaions DB)
-=======
-            $table->strings('name');
-            $table->strings('postion');
-            $table->strings('is_active');
->>>>>>> parent of 0c72dba (modify migeration)
-        });
-    }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('categories');
-    }
+            $table->softDeletes();
+		});
+	}
+
+	public function down()
+	{
+		Schema::drop('course_category');
+	}
 }
+
+// use Illuminate\Database\Migrations\Migration;
+// use Illuminate\Support\Facades\Schema;
+// use Illuminate\Database\Schema\Blueprint ;
+
+
+
+//         class CreateCategoriesTable extends Migration
+// {
+//     /**
+//      * Run the migrations.
+//      *
+//      * @return void
+//      */
+//     public function up()
+//     {
+//         Schema::create('categories', function (Blueprint $table) {
+//             $table->id();
+//             $table->timestamps();
+//             $table->strings('name');
+//             $table->strings('postion');
+//             $table->strings('is_active');
+ 
+            
+//          });
+//     }
+
+    
+// }

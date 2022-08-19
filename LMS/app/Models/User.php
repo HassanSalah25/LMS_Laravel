@@ -10,7 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    protected $table = 'admin_user';
+    protected $table = 'users';
 	public $timestamps = true;
 
 	// use SoftDeletingTrait;
@@ -26,11 +26,26 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+
+
+     // #accepts ALL records  ##Wrong security implement !!
+    protected $guarded =[];
+
+
+    //  protected $fillable = [
+    //     'name',
+    //     'email',
+    //     'password',
+    //     'password',
+
+    //     // $table->id();
+    //     //     $table->string('name');
+    //     //     $table->string('email')->unique();
+    //     //     $table->timestamp('email_verified_at')->nullable();
+    //     //     $table->string('password');
+    //     //     $table->rememberToken();
+    //     //     $table->timestamps();
+    // ];
 
     /**
      * The attributes that should be hidden for serialization.

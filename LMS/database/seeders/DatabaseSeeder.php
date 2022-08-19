@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
+
+// #inheret from super class
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -15,8 +17,8 @@ class DatabaseSeeder extends Seeder
     {
 
         // # call the seeder for your table 
-        $this->call(UsersSeeders::class);
-        
+         $this->call(UsersSeeder::class);
+
         // \App\Models\User::factory(10)->create();
     }
 }
