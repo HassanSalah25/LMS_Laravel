@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class CoursesController extends Controller
@@ -14,6 +16,9 @@ class CoursesController extends Controller
     public function index()
     {
         //
+        return view('course.index', [
+            'courses' => Course::all()
+        ]);
     }
 
     /**
@@ -24,6 +29,7 @@ class CoursesController extends Controller
     public function create()
     {
         //
+        return view("course.create");
     }
 
     /**
@@ -35,6 +41,8 @@ class CoursesController extends Controller
     public function store(Request $request)
     {
         //
+        Admin::create($request->all());
+        return redirect('courses/index');
     }
 
     /**
@@ -54,9 +62,12 @@ class CoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Course $course)
     {
         //
+        return view('course.edit', [
+            'course' => $course
+        ]);
     }
 
     /**
@@ -69,6 +80,16 @@ class CoursesController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $course = course::find($id);
+        $course->name = $request->name;
+        $course->description = $request->description;
+        $course->cover_image = $request->cover_image;
+        $course->position = $request->position;
+        $course->is_active = $request->is_active;
+        $course->certificate_image = $request->certificate_image;
+        $course->save();
+
+        return redirect('courses');
     }
 
     /**
@@ -80,5 +101,7 @@ class CoursesController extends Controller
     public function destroy($id)
     {
         //
+        Course::where('id', $id)->delete();
+        return redirect('courses');
     }
 }

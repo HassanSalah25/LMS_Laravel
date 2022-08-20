@@ -104,7 +104,7 @@ class AdminController extends Controller
     {
         //
         Admin::where('id', $id)->delete();
-        return redirect('admins/index');
+        return redirect('admins');
 
     }
 }

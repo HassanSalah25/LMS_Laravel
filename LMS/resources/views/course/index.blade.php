@@ -6,10 +6,10 @@
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-5">
-                        <h2>Admin <b>Management</b></h2>
+                        <h2>Course <b>Management</b></h2>
                     </div>
                     <div class="col-sm-7">
-                        <a href="admins/create" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                        <a href="courses/create" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
                         <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>
                     </div>
                 </div>
@@ -19,28 +19,36 @@
                     <tr>
                         <th>#</th>
                         <th>Name</th>
-                        <th>Email</th>
-                        <th>Mobile</th>
+                        <th>description</th>
+                        <th>cover_image</th>
+                        <th>hours</th>
+                        <th>position</th>
+                        <th>is_active</th>
+                        <th>certificate_image</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                  <tbody>
 
-                    @forelse ($Admins as $Admin)
+                    @forelse ($courses as $course)
                     <tr scope="row">
                         <td>
-                        {{$Admin->id}}
+                        {{$course->id}}
                         </td>
-                        <td>{{$Admin->name}}</td>
+                        <td>{{$course->name}}</td>
 
-                        <td>{{$Admin->email}}</td>
+                        <td>{{$course->description}}</td>
 
-                        <td>{{$Admin->mobile}}</td>
+                        <td>{{$course->hours}}</td>
+                        <td>{{$course->position}}</td>
+                        <td>{{$course->is_active}}</td>
+                        <td>{{$course->certificate_image}}</td>
+                        <td>{{$course->created_by}}</td>
                         <td>
-                            <a href="{{ route('Admins.edit', $Admin) }}" class="settings" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                            <a href="{{ route('courses.edit', $course) }}" class="settings" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
                         </td>
                         <td class="delete">
-                            <form action="admins/destroy/{{$Admin->id}}" method="post"
+                            <form action="courses/destroy/{{$course->id}}" method="post"
                                 class="form-hidden">
                                 <button class="btn btn-danger delete-author">Delete</button>
                                 @csrf
