@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Certification extends Model
 {
     use HasFactory;
+    protected $table = 'certification' ;
+	public $timestamps = true;
+    protected $guarded =[];
+
      /**
      * Get the batch that owns the Student
      *

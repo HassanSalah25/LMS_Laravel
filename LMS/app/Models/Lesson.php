@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Lesson extends Model
 {
     use HasFactory;
-      /**
+    protected $table = 'lessons';
+	public $timestamps = true;
+    protected $guarded =[];
+       /**
      * Get the batch that owns the Student
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
