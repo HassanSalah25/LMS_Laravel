@@ -60,9 +60,12 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Admin $admin)
     {
         //
+        return view('Admin.edit', [
+            'admin' => $admin
+        ]);
     }
 
     /**
