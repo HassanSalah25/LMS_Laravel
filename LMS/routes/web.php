@@ -28,10 +28,11 @@ Route::get('/admin', function () {//NewDesign
         'admins' => Admin::Paginate(5)
     ]);
 });
-Route::get('/dashboard', function () {
-   // return view('Maindashboard/index');
-    return \File::get(public_path() . '/SPAindex.html');
 
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//    // return view('Maindashboard/index');
+//     return \File::get(public_path() . '/SPAindex.html');
 
-require __DIR__.'/auth.php';
+// })->middleware(['auth'])->name('dashboard');
+
+// require __DIR__.'/auth.php';
