@@ -23,7 +23,11 @@ Route::get('/admins', function () {
         'admins' => Admin::Paginate(5)
     ]);
 });
-
+Route::get('/admin', function () {//NewDesign 
+    return view('admin1', [
+        'admins' => Admin::Paginate(5)
+    ]);
+});
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

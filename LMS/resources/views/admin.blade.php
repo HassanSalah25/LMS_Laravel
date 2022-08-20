@@ -23,11 +23,8 @@
         {{$Admins->id}}
         </td>
         <td>{{$Admins->name}}</td>
-        <td>
-            {{$Admins->password}}
-        </td>
-        <td>{{$Admins->rememberToken}}</td>
-        <td>{{$Admins->mobile}}</td>
+       
+         <td>{{$Admins->mobile}}</td>
         </tr>
         @empty
         <tr>
