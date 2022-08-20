@@ -13,7 +13,7 @@ use App\Models\Category;
 use App\Models\Certification;
 
 use App\Models\Course;
-use App\Models\courses_category;
+use App\Models\CourseCategory;
 use App\Models\Enrool;
 use App\Models\Feedback;
 use App\Models\Lesson;
@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
          Batch::factory()->times(10)->create();
          Category::factory()->times(10)->create();
          Certification::factory()->times(10)->create();
-         course_category::factory()->times(10)->create();
+         CourseCategory::factory()->times(10)->create();
          Course::factory()->times(10)->create();
          Enrool::factory()->times(10)->create();
          feedback::factory()->times(10)->create();
