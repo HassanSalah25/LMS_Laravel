@@ -4,10 +4,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <h2 class="admin-heading">All Authors</h2>
+                    <h2 class="admin-heading">All Admins</h2>
                 </div>
                 <div class="offset-md-7 col-md-2">
-                    <a class="add-new" href="{{ route('Admin.create') }}">Add Author</a>
+                    <a class="add-new" href="Admin/create">Add Admin</a>
                 </div>
             </div>
             <div class="row">
@@ -26,10 +26,10 @@
                                     <td>{{ $Admin->id }}</td>
                                     <td>{{ $Admin->name }}</td>
                                     <td class="edit">
-                                        <a href="{{ route('Admins.edit', $Admin) }}" class="btn btn-success">Edit</a>
+                                        <a href="edit.blade.php" class="btn btn-success">Edit</a>
                                     </td>
                                     <td class="delete">
-                                        <form action="{{ route('Admins.destroy', $Admin->id) }}" method="post"
+                                        <form action="destroy/{{$Admin->id}}" method="post"
                                             class="form-hidden">
                                             <button class="btn btn-danger delete-author">Delete</button>
                                             @csrf
@@ -38,12 +38,11 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="4">No Authors Found</td>
+                                    <td colspan="4">No Admin Found</td>
                                 </tr>
                             @endforelse
                         </tbody>
                     </table>
-                    {{ $authors->links('vendor/pagination/bootstrap-4') }}
                 </div>
             </div>
         </div>
