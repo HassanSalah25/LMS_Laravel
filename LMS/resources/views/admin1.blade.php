@@ -50,8 +50,14 @@
                     
                         <td>{{$Admins->mobile}}</td>
                         <td>
-                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                            <a href="{{ route('Admins.edit', $Admin) }}" class="settings" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                        </td>
+                        <td class="delete">
+                            <form action="destroy/{{$Admin->id}}" method="post"
+                                class="form-hidden">
+                                <button class="btn btn-danger delete-author">Delete</button>
+                                @csrf
+                            </form>
                         </td>
                         </tr>
                         @empty

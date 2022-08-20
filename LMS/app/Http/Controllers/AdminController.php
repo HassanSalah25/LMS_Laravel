@@ -39,7 +39,12 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         //
-        Admin::create($request->all());
+        Admin::create($request->validate([
+            'name'=> 'required',
+            'password'=> 'required',
+            'mobile'=> 'required',
+            'email' => 'required|unique:admins'
+        ]));
         return redirect('admins/index');
     }
 
@@ -78,6 +83,15 @@ class AdminController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $admin = admin::find($id);
+        $admin->name = $request->name;
+        $admin->password = $request->password;
+        $admin->mobile = $request->mobile;
+        $admin->email = $request->email;
+        $admin->save();
+
+        return redirect('admins/index');
     }
 
     /**
