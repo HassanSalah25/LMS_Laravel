@@ -7,7 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
+
     use HasFactory;
+    protected $table = 'courses';
+	public $timestamps = true;
+    
+    protected $guarded =[   
+
+    ];
+
     public function feedback()
     {
         return $this->hasMany(Feedback::class);

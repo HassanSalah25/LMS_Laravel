@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class courses_category extends Model
 {
     use HasFactory;
-    public function courses()
+    protected $table = 'courses_categories';
+	public $timestamps = true;
+    protected $guarded =[];
+     public function courses()
     {
         return $this->hasMany(Course::class);
     }

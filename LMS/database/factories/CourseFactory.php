@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CourseFactory extends Factory
 {
+    protected $model = Course::class;
+
     /**
      * Define the model's default state.
      *

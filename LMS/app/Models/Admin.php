@@ -14,7 +14,7 @@ class Admin extends Model
     protected $table = 'admins';
     public $timestamps = true ;
     use HasApiTokens, HasFactory, Notifiable;
-
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -23,7 +23,13 @@ class Admin extends Model
 
 
      // #accepts ALL records  ##Wrong security implement !!
-    protected $guarded =[];
+     protected $guarded =[
+
+     ];
+    //  protected $fillable =[
+    //     'name', 'email'
+
+    //  ];
 
      /**
      * The attributes that should be hidden for serialization.

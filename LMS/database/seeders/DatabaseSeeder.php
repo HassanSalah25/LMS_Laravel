@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
+            //way 1
         // # call the seeder for your table 
          //$this->call(AdminsSeeder::class);
          Admin::factory()->times(10)->create();
@@ -50,7 +50,7 @@ class DatabaseSeeder extends Seeder
          Student::factory()->times(10)->create();
 
          
-        
+        //way 2
          $this->call(UsersSeeder::class);
 
         // \App\Models\User::factory(10)->create();

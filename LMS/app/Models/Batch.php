@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Batch extends Model
 {
     use HasFactory;
+    protected $table = 'batches';
+	public $timestamps = true;
+    protected $guarded =[];
+
     public function students()
     {
         return $this->hasMany(Student::class);
@@ -17,4 +21,5 @@ class Batch extends Model
     {
         return $this->hasMany(Certification::class);
     }
+
 }

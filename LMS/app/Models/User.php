@@ -13,6 +13,7 @@ class User extends Authenticatable
     use HasFactory;
     protected $table = 'users';
 	public $timestamps = true;
+    protected $guarded =[];
 
 	// use SoftDeletingTrait;
 
@@ -30,7 +31,6 @@ class User extends Authenticatable
 
 
      // #accepts ALL records  ##Wrong security implement !!
-    protected $guarded =[];
 
 
     //  protected $fillable = [

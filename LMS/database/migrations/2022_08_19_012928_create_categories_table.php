@@ -6,9 +6,9 @@ class CreateCategoriesTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('course_category', function(Blueprint $table) {
+		Schema::create('categories', function(Blueprint $table) {
 			$table->id();
-			$table->integer('position')->unsigned();
+			$table->integer('position')->nullable();
 			$table->string('name');
 			$table->string('is_active');
 

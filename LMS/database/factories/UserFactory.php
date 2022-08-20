@@ -7,6 +7,8 @@ use Illuminate\Support\Str;
 
 class UserFactory extends Factory
 {
+    protected $model = Category::class;
+
     /**
      * Define the model's default state.
      *
@@ -14,6 +16,7 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),

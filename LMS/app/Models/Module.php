@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Module extends Model
 {
     use HasFactory;
-    public function lesson()
+    protected $table = 'modules';
+	public $timestamps = true;
+    protected $guarded =[];
+     public function lesson()
     {
         return $this->hasMany(Lesson::class);
     }

@@ -15,11 +15,11 @@ class BatchFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+        public function definition()
     {
         return [
                 //Error :  Maximum retries of 10000 reached without finding a unique value
-//            "staff_id" => $this->faker->unique->randomDigit,
+//          "staff_id" => $this->faker->unique->randomDigit,
             "staff_id" => $this->faker->randomDigit,
             "course_id" => $this->faker->randomDigit,
             "name" => $this->faker->name,
