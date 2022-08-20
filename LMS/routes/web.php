@@ -19,13 +19,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-   // return view('Maindashboard/index');
-    return \File::get(public_path() . '/SPAindex.html');
+ 
+Route::get('/admin', function () {//NewDesign 
+    return view('admin1', [
+        'admins' => Admin::Paginate(5)
+    ]);
+});
 
-})->middleware(['auth'])->name('dashboard');
+ 
+// Route::get('/dashboard', function () {
+//    // return view('Maindashboard/index');
+//     return \File::get(public_path() . '/SPAindex.html');
 
+ // })->middleware(['auth'])->name('dashboard');
 
+  
 // admin CRUD
 Route::get('/admins', [AdminController::class, 'index'])->name('Admins');
 Route::get('/admins/create', [AdminController::class, 'create'])->name('Admins.create');
@@ -35,3 +43,4 @@ Route::post('/admins/delete/{id}', [AdminController::class, 'destroy'])->name('A
 Route::post('/admins/create', [AdminController::class, 'store'])->name('Admins.store');
 
 require __DIR__.'/auth.php';
+ 
