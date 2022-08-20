@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Admin;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
