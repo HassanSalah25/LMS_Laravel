@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Admin;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,9 @@ Route::get('/', function () {
 });
 
 Route::get('/admins', function () {
-    return view('admin');
+    return view('admin', [
+        'admins' => Admin::Paginate(5)
+    ]);
 });
 
 Route::get('/dashboard', function () {
