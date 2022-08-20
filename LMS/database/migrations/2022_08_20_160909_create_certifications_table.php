@@ -15,12 +15,13 @@ class CreateCertificationsTable extends Migration
     {
         Schema::create('certifications', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string("course_id");
             $table->string("batch_id");
             $table->string("type");
             $table->string("certificate");
             $table->string("created_by");
+            $table->timestamps();
+
         });
     }
 

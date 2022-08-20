@@ -18,18 +18,20 @@ class CertificationFactory extends Factory
     {
         return [
             //
-            "course_id" =>$this->faker->randomDigit,
-            "batch_id"  =>$this->faker->randomDigit,
-            "type"  =>$this->faker->name,
-            "certificate"  =>$this->faker->name,
-            "created_by" =>$this->faker->name,
+            // "created_at"     =>$this->faker->dateTimeThisMonth,
+            // "updated_at"      =>$this->faker->dateTimeThisMonth,
+            "course_id"          =>$this->faker->name,
+            "batch_id"   =>$this->faker->name,
+            "type"    =>$this->faker->name,
+            "certificate"    =>$this->faker->name,
+            "created_by"    =>$this->faker->name,
+            "created_at"    =>$this->faker->dateTimeThisMonth,
+            "updated_at"    =>$this->faker->dateTimeThisMonth,
+             
 
-
-            // $table->string("course_id");
-            // $table->string("batch_id");
-            // $table->string("type");
-            // $table->string("certificate");
-            // $table->string("created_by");
+          
+            
+            
         ];
     }
 }

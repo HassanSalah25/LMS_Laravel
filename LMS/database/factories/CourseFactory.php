@@ -14,20 +14,18 @@ class CourseFactory extends Factory
     public function definition()
     {
         return [
-   
-          
-            'created_at' => $this->faker-> dateTimeThisMonth,
-            'updated_at' => $this->faker-> dateTimeThisMonth,
-            'name' => $this->faker->name,
-            'description' => $this->faker->randomDigit,
-            'cover_image' => $this->faker->randomDigit,
-            'hours' => $this->faker->randomDigit,
-            'hours' => $this->faker->randomDigit,
-            'hours' => $this->faker->randomDigit,
-            'hours' => $this->faker->randomDigit,
-              
-            //
-            // MariaDB [lms]> desc courses;
+            'created_at'    => $this->faker-> dateTimeThisMonth,
+            'updated_at'    => $this->faker-> dateTimeThisMonth,
+            'name'          => $this->faker->name,
+            'description'   => $this->faker->randomDigit,
+            'cover_image'   => $this->faker->randomDigit,
+            'hours'         => $this->faker->randomDigit,
+            'certificate_image'         => $this->faker->randomDigit,
+            'position'         => $this->faker->randomDigit,
+            'is_active'         => $this->faker->randomDigit,
+            'created_by'         => $this->faker->randomDigit,
+
+            // MariaDB [lms]> describe courses;
             // +-------------------+---------------------+------+-----+---------+----------------+
             // | Field             | Type                | Null | Key | Default | Extra          |
             // +-------------------+---------------------+------+-----+---------+----------------+
@@ -44,6 +42,7 @@ class CourseFactory extends Factory
             // | created_by        | varchar(255)        | NO   |     | NULL    |                |
             // +-------------------+---------------------+------+-----+---------+----------------+
             
+
         ];
     }
 }

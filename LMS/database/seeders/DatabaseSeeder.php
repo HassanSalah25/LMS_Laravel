@@ -14,7 +14,8 @@ use App\Models\Certification;
 
 use App\Models\Course;
 use App\Models\CourseCategory;
-use App\Models\Enrool;
+use App\Models\Enroll;
+    
 use App\Models\Feedback;
 use App\Models\Lesson;
 use App\Models\Module;
@@ -46,13 +47,13 @@ class DatabaseSeeder extends Seeder
          Certification::factory()->times(10)->create();
          CourseCategory::factory()->times(10)->create();
          Course::factory()->times(10)->create();
-         Enrool::factory()->times(10)->create();
-         feedback::factory()->times(10)->create();
-         Lesson::factory()->times(10)->create();
-         Module::factory()->times(10)->create();
-         Post::factory()->times(10)->create();
-         Staff::factory()->times(10)->create();
-         Student::factory()->times(10)->create();
+         Enroll::factory()->times(10)->create();
+        //  feedback::factory()->times(10)->create();
+        //  Lesson::factory()->times(10)->create();
+        //  Module::factory()->times(10)->create();
+        //  Post::factory()->times(10)->create();
+        //  Staff::factory()->times(10)->create();
+        //  Student::factory()->times(10)->create();
          User::factory()->times(10)->create();
 
          

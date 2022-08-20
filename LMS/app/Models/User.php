@@ -12,7 +12,7 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
      protected $table = 'users';
-     //protected $guarded =[];
+     protected $guarded =[];
    
 
     /**
@@ -25,22 +25,22 @@ class User extends Authenticatable
      // #accepts ALL records  ##Wrong security implement !!
 
 
-     protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'remember_token',
-        // +----------------+---------------------+------+-----+---------+----------------+
-        // | Field          | Type                | Null | Key | Default | Extra          |
-        // +----------------+---------------------+------+-----+---------+----------------+
-        // | id             | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
-        // | name           | varchar(255)        | NO   |     | NULL    |                |
-        // | email          | varchar(255)        | NO   | UNI | NULL    |                |
-        // | password       | varchar(255)        | NO   |     | NULL    |                |
-        // | remember_token | varchar(100)        | YES  |     | NULL    |                |
-        // +----------------+---------------------+------+-----+---------+----------------+
+    //  protected $fillable = [
+    //     'name',
+    //     'email',
+    //     'password',
+    //     'remember_token',
+    //     // +----------------+---------------------+------+-----+---------+----------------+
+    //     // | Field          | Type                | Null | Key | Default | Extra          |
+    //     // +----------------+---------------------+------+-----+---------+----------------+
+    //     // | id             | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+    //     // | name           | varchar(255)        | NO   |     | NULL    |                |
+    //     // | email          | varchar(255)        | NO   | UNI | NULL    |                |
+    //     // | password       | varchar(255)        | NO   |     | NULL    |                |
+    //     // | remember_token | varchar(100)        | YES  |     | NULL    |                |
+    //     // +----------------+---------------------+------+-----+---------+----------------+
         
-    ];
+    // ];
 
      
 }
