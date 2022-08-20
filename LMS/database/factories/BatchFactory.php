@@ -23,7 +23,7 @@ class BatchFactory extends Factory
             "staff_id" => $this->faker->randomDigit,
             "course_id" => $this->faker->randomDigit,
             "name" => $this->faker->name,
-            "start_date" => $this->faker->dateTime,
+            "start_date" => $this->faker->dateTimeThisMonth,
             "end_date" => $this->faker->dateTimeThisMonth,
             "hours" => $this->faker->unixTime,//need to be divided /hours...
             "days" => $this->faker->unixTime,

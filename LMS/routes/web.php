@@ -29,7 +29,9 @@ Route::get('/admin', function () {//NewDesign
     ]);
 });
 Route::get('/dashboard', function () {
-    return view('dashboard');
+   // return view('Maindashboard/index');
+    return \File::get(public_path() . '/SPAindex.html');
+
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

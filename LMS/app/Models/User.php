@@ -11,18 +11,9 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    use HasFactory;
-    protected $table = 'users';
-	public $timestamps = true;
-    protected $guarded =[];
-
-	// use SoftDeletingTrait;
-
-	// protected $dates = ['deleted_at'];
-	// protected $fillable = array('name', 'email', 'mobile', 'password', 'role_id', 'is_active');
-
+     protected $table = 'users';
+     //protected $guarded =[];
    
-    use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -34,37 +25,22 @@ class User extends Authenticatable
      // #accepts ALL records  ##Wrong security implement !!
 
 
-    //  protected $fillable = [
-    //     'name',
-    //     'email',
-    //     'password',
-    //     'password',
-
-    //     // $table->id();
-    //     //     $table->string('name');
-    //     //     $table->string('email')->unique();
-    //     //     $table->timestamp('email_verified_at')->nullable();
-    //     //     $table->string('password');
-    //     //     $table->rememberToken();
-    //     //     $table->timestamps();
-    // ];
-
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
+     protected $fillable = [
+        'name',
+        'email',
         'password',
         'remember_token',
+        // +----------------+---------------------+------+-----+---------+----------------+
+        // | Field          | Type                | Null | Key | Default | Extra          |
+        // +----------------+---------------------+------+-----+---------+----------------+
+        // | id             | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+        // | name           | varchar(255)        | NO   |     | NULL    |                |
+        // | email          | varchar(255)        | NO   | UNI | NULL    |                |
+        // | password       | varchar(255)        | NO   |     | NULL    |                |
+        // | remember_token | varchar(100)        | YES  |     | NULL    |                |
+        // +----------------+---------------------+------+-----+---------+----------------+
+        
     ];
 
-    // /**
-    //  * The attributes that should be cast.
-    //  *
-    //  * @var array<string, string>
-    //  */
-    // protected $casts = [
-    //     'email_verified_at' => 'datetime',
-    // ];
+     
 }
