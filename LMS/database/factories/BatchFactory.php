@@ -18,19 +18,16 @@ class BatchFactory extends Factory
     public function definition()
     {
         return [
-
-            "staff_id" => $this->faker->unique,
-            "course_id" => $this->faker->name,
+                //Error :  Maximum retries of 10000 reached without finding a unique value
+//            "staff_id" => $this->faker->unique->randomDigit,
+            "staff_id" => $this->faker->randomDigit,
+            "course_id" => $this->faker->randomDigit,
             "name" => $this->faker->name,
-            "start_date" => $this->faker->name,
-            "end_date" => $this->faker->name,
-            "hours" => $this->faker->name,
-            "days" => $this->faker->name,
+            "start_date" => $this->faker->dateTime,
+            "end_date" => $this->faker->dateTimeThisMonth,
+            "hours" => $this->faker->unixTime,//need to be divided /hours...
+            "days" => $this->faker->unixTime,
             "created_by" => $this->faker->name,
-
-
-
-            
             // //
             // $table->id();
             // $table->timestamps();

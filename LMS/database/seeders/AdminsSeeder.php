@@ -15,7 +15,7 @@ use App\Models\Admin;
     {
         //
         //use factory here to fill the data
-        Admin::factory(100)->create();
+        Admin::factory(10)->create();
 //        Admin::factory()->times(10)->create();
     }
 }

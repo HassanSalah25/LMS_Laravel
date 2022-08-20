@@ -15,6 +15,6 @@ class BatchSeeder extends Seeder
     {
         //
         //use factory here to fill the data
-        Batch::factory()->times(100)->create();
+        Batch::factory()->times(10)->create();
     }
 }
