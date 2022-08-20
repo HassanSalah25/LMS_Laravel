@@ -48,12 +48,11 @@ class DatabaseSeeder extends Seeder
          CourseCategory::factory()->times(10)->create();
          Course::factory()->times(10)->create();
          Enroll::factory()->times(10)->create();
-        //  feedback::factory()->times(10)->create();
-        //  Lesson::factory()->times(10)->create();
-        //  Module::factory()->times(10)->create();
-        //  Post::factory()->times(10)->create();
-        //  Staff::factory()->times(10)->create();
-        //  Student::factory()->times(10)->create();
+         Feedback::factory()->times(10)->create();
+         Lesson::factory()->times(10)->create();
+         Module::factory()->times(10)->create();
+         Staff::factory()->times(10)->create();
+         Student::factory()->times(10)->create();
          User::factory()->times(10)->create();
 
          

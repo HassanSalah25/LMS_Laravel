@@ -25,13 +25,7 @@ class AdminFactory extends Factory
             'remember_token' => Str::random(10),
             'mobile' => $this->faker->numerify('+20##########'),
                 //Example (test): $faker->numerify('##########'); // "3579786681"
-        //  $table->string('name');
-        //  $table->string('email')->unique();
-        //  $table->string('password');
-        //  $table->rememberToken();
-        //  $table->timestamps();
-        //  $table->string('mobile')->nullable();
-         
+     
         ];
     }
 

@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
- use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateFeedbacksTable extends Migration
+class CreateFeedbackTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,24 +13,28 @@ class CreateFeedbacksTable extends Migration
      */
     public function up()
     {
-        Schema::create('feedbacks', function (Blueprint $table) {
+        Schema::create('feedback', function (Blueprint $table) {
             $table->id();
+            $table->timestamps();
 			$table->integer('course_id')->unsigned();
 			$table->integer('batch_id')->unsigned();
 			$table->integer('staff_id')->unsigned();
 			$table->integer('student_id')->unsigned();
 			$table->string('title')->nullable();
 			$table->string('rating')->nullable();
-			$table->longText('review')->nullable();
-			$table->tinyInteger('is_active')->default('0');
-			$table->timestamps();
+			$table->string('review')->nullable();
+			$table->integer('is_active')->default('0');
 			$table->softDeletes();
-             
-       });
+        });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
-	{
-		Schema::drop('feedback');
-	}
+    {
+        Schema::dropIfExists('feedback');
+    }
 }
