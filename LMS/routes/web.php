@@ -6,7 +6,7 @@ use App\Http\Controllers\AdminController;
  use App\Http\Controllers\StudentController;
  use App\Http\Controllers\CoursesController;
  use App\Http\Controllers\StaffController;
- 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,11 +19,11 @@ Route::get('/admin', function () {//NewDesign
 });
 
 
-// Route::get('/dashboard', function () {
-//    // return view('Maindashboard/index');
-//     return \File::get(public_path() . '/SPAindex.html');
+Route::get('/dashboard', function () {
+   return view('Maindashboard/index');
+   // return \File::get(public_path() . '/SPAindex.html');
 
- // })->middleware(['auth'])->name('dashboard');
+ })->middleware(['auth'])->name('dashboard');
 
 
 // admin CRUD
@@ -34,7 +34,7 @@ Route::post('/admins/update/{id}', [AdminController::class, 'update'])->name('Ad
 Route::post('/admins/destroy/{id}', [AdminController::class, 'destroy'])->name('Admins.destroy')->middleware('auth');
 Route::post('/admins/create', [AdminController::class, 'store'])->name('Admins.store')->middleware('auth');
 
- 
+
 // Student CRUD
 Route::get('/students', [StudentController::class, 'index'])->name('Students')->middleware('auth');
 Route::get('/students/create', [StudentController::class, 'create'])->name('Students.create')->middleware('auth');
@@ -44,13 +44,13 @@ Route::post('/students/destroy/{id}', [StudentController::class, 'destroy'])->na
 Route::post('/students/create', [StudentController::class, 'store'])->name('Students.store')->middleware('auth');
 
 // Staff CRUD
-Route::get('/staffs', [StudentController::class, 'index'])->name('Staffs')->middleware('auth');
-Route::get('/staffs/create', [StudentController::class, 'create'])->name('Staffs.create')->middleware('auth');
-Route::get('/staffs/edit/{student}', [StudentController::class, 'edit'])->name('Staffs.edit')->middleware('auth');
-Route::post('/staffs/update/{id}', [StudentController::class, 'update'])->name('Staffs.update')->middleware('auth');
-Route::post('/staffs/destroy/{id}', [StudentController::class, 'destroy'])->name('Staffs.destroy')->middleware('auth');
-Route::post('/staffs/create', [StudentController::class, 'store'])->name('Staffs.store')->middleware('auth');
- 
+Route::get('/staffs', [StaffController::class, 'index'])->name('Staffs')->middleware('auth');
+Route::get('/staffs/create', [StaffController::class, 'create'])->name('Staffs.create')->middleware('auth');
+Route::get('/staffs/edit/{student}', [StaffController::class, 'edit'])->name('Staffs.edit')->middleware('auth');
+Route::post('/staffs/update/{id}', [StaffController::class, 'update'])->name('Staffs.update')->middleware('auth');
+Route::post('/staffs/destroy/{id}', [StaffController::class, 'destroy'])->name('Staffs.destroy')->middleware('auth');
+Route::post('/staffs/create', [StaffController::class, 'store'])->name('Staffs.store')->middleware('auth');
+
 // course CRUD
 Route::get('/courses', [CoursesController::class, 'index'])->name('courses')->middleware('auth');
 Route::get('/courses/create', [CoursesController::class, 'create'])->name('courses.create')->middleware('auth');
@@ -58,5 +58,5 @@ Route::get('/courses/edit/{course}', [CoursesController::class, 'edit'])->name('
 Route::post('/courses/update/{id}', [CoursesController::class, 'update'])->name('courses.update')->middleware('auth');
 Route::post('/courses/destroy/{id}', [CoursesController::class, 'destroy'])->name('courses.destroy')->middleware('auth');
 Route::post('/courses/create', [CoursesController::class, 'store'])->name('courses.store')->middleware('auth');
- 
+
 require __DIR__.'/auth.php';

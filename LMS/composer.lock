@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf8e79c66131c7cdb282113246c30544",
+    "content-hash": "25faeff594dc557775f0d587195603b4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5978,65 +5978,6 @@
                 "source": "https://github.com/hamcrest/hamcrest-php/tree/v2.0.1"
             },
             "time": "2020-07-09T08:09:16+00:00"
-        },
-        {
-            "name": "kamona/kui-laravel-breeze",
-            "version": "v0.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Kamona-WD/kui-laravel-breeze.git",
-                "reference": "beb4b9ba62bf216c3547d748ea6923a980fe6153"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Kamona-WD/kui-laravel-breeze/zipball/beb4b9ba62bf216c3547d748ea6923a980fe6153",
-                "reference": "beb4b9ba62bf216c3547d748ea6923a980fe6153",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.3|^8.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "KUI\\Breeze\\KUIBreezeServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "KUI\\Breeze\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kamona-WD",
-                    "email": "ak3849909@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Different UI for laravel/breeze",
-            "homepage": "https://github.com/Kamona-WD/kui-laravel-breeze",
-            "keywords": [
-                "alpinejs",
-                "breeze",
-                "dashboard",
-                "laravel",
-                "react",
-                "tailwindcss",
-                "ui",
-                "vuejs"
-            ],
-            "support": {
-                "issues": "https://github.com/Kamona-WD/kui-laravel-breeze/issues",
-                "source": "https://github.com/Kamona-WD/kui-laravel-breeze/tree/v0.3.0"
-            },
-            "time": "2022-07-01T03:32:34+00:00"
         },
         {
             "name": "laravel/sail",

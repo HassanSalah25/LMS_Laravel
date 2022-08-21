@@ -1,5 +1,27 @@
-@extends('layouts.app')
-@section('content')
+
+<!doctype html>
+<html lang="en">
+<head>
+    @extends('layouts.app')
+    @section('content')
+
+    @endsection
+    @php
+
+        echo "<h1>holaa9</h1>";
+
+
+
+    @endphp
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+ <ul class="container"></ul>
+
 <div class="container-xl">
     <div class="table-responsive">
         <div class="table-wrapper">
@@ -16,20 +38,20 @@
             </div>
             <table class="table table-striped table-hover">
                 <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Mobile</th>
-                        <th>Action</th>
-                    </tr>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Action</th>
+                </tr>
                 </thead>
-                 <tbody>
+                <tbody>
 
-                    @forelse ($Staff as $Staff)
+                @forelse ($Staff as $Staff)
                     <tr scope="row">
                         <td>
-                        {{$Staff->id}}
+                            {{$Staff->id}}
                         </td>
                         <td>{{$Staff->name}}</td>
 
@@ -41,20 +63,21 @@
                         </td>
                         <td class="delete">
                             <form action="staff/destroy/{{$staff->id}}" method="post"
-                                class="form-hidden">
+                                  class="form-hidden">
                                 <button class="btn btn-danger delete-author">Delete</button>
                                 @csrf
                             </form>
                         </td>
-                        </tr>
-                        @empty
-                        <tr>
-                            <td colspan="4">No Authors Found</td>
-                        </tr>
-                    @endforelse
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="4">No Authors Found</td>
+                    </tr>
+                @endforelse
 
                 </tbody>
             </table>
+            <h1>holaa9</h1>
 
             <!--pages Link -->
             <div class="clearfix">
@@ -74,6 +97,8 @@
 </div>
 </body>
 </html>
+
+
 
 
 <!-- Style PART -->
