@@ -15,7 +15,7 @@ use App\Models\Certification;
 use App\Models\Course;
 use App\Models\CourseCategory;
 use App\Models\Enroll;
-    
+
 use App\Models\Feedback;
 use App\Models\Lesson;
 use App\Models\Module;
@@ -37,11 +37,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //Note : must take care of the way of sorting same as factory 
+        //Note : must take care of the way of sorting same as factory
             //way 1
-        // # call the seeder for your table 
+        // # call the seeder for your table
          //$this->call(AdminsSeeder::class);
-         Admin::factory()->times(10)->create();
+         Admin::factory()->times(100)->create();
          Batch::factory()->times(10)->create();
          Category::factory()->times(10)->create();
          Certification::factory()->times(10)->create();
@@ -51,11 +51,11 @@ class DatabaseSeeder extends Seeder
          Feedback::factory()->times(10)->create();
          Lesson::factory()->times(10)->create();
          Module::factory()->times(10)->create();
-         Staff::factory()->times(10)->create();
-         Student::factory()->times(10)->create();
-         User::factory()->times(10)->create();
+         Staff::factory()->times(100)->create();
+         Student::factory()->times(100)->create();
+         User::factory()->times(100)->create();
 
-         
+
         //way 2
          //$this->call(UsersSeeder::class);
 

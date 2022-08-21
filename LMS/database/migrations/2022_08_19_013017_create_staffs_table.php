@@ -16,13 +16,13 @@ class CreateStaffsTable extends Migration
         Schema::create('staffs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email');//->unique();
             $table->string('mobile');
             $table->string('password');
             $table->tinyInteger('is_active')->default('1');
             $table->timestamps();
             $table->softDeletes();
-             
+
         });
     }
 

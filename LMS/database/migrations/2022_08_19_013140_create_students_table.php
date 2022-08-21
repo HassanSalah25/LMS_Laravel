@@ -17,7 +17,7 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->string('name');
 			$table->string('mobile');
-			$table->string('email')->unique();
+			$table->string('email');//->unique();
 			$table->string('password');
  			$table->decimal('balance_amount', 10,2)->default('0.00');
 			$table->tinyInteger('is_enrolled')->default('0');
