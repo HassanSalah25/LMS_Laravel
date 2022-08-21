@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUserRequest;
 use Illuminate\Http\Request;
+use function GuzzleHttp\Promise\all;
 
 class UserController extends Controller
 {
@@ -10,9 +12,9 @@ class UserController extends Controller
 
     public function index()
     {
-      
+
     }
-  
+
     /**
      * Show the form for creating a new resource.
      *
@@ -20,30 +22,45 @@ class UserController extends Controller
      */
     public function create()
     {
-      
+
     }
-  
+
     /**
      * Store a newly created resource in storage.
      *
      * @return Response
      */
-    public function store()
+
+                    // got to this request then validate from its Rules method !
+    public function store(StoreUserRequest $myRequestObject)
+
     {
-      
+
+        $data=$myRequestObject->all();
+
+//        return[
+//            'name'=> 'required',
+//            'password'=> 'required',
+//            'mobile'=> 'required',
+//            'email' => 'required|unique:admins'
+//            ];
+
     }
-  
+
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+
+    //TypeHint the paramter to be validated
+    public function show(StoreUserRequest $myRequestObject    )
     {
-      
+        $data= $myRequestObject->all();
+
     }
-  
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -52,9 +69,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-      
+
     }
-  
+
     /**
      * Update the specified resource in storage.
      *
@@ -63,9 +80,9 @@ class UserController extends Controller
      */
     public function update($id)
     {
-      
+
     }
-  
+
     /**
      * Remove the specified resource from storage.
      *
@@ -74,6 +91,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-      
+
     }
 }

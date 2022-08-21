@@ -9,7 +9,7 @@
                         <h2>Admin <b>Management</b></h2>
                     </div>
                     <div class="col-sm-7">
-                        <a href="admins/create" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                        <a href="/admins/create" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
                         <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                             <a href="{{ route('Admins.edit', $Admin) }}" class="settings" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
                         </td>
                         <td class="delete">
-                            <form action="admins/destroy/{{$Admin->id}}" method="post"
+                            <form action="/admins/destroy/{{$Admin->id}}" method="post"
                                 class="form-hidden">
                                 <button class="btn btn-danger delete-author">Delete</button>
                                 @csrf

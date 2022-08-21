@@ -49,7 +49,7 @@
                         <input class="form-control" type="text" placeholder="Admin Mobile" name="mobile" value="{{ old('mobile') }}">
                     </div>
                 </div>
-                <input type="submit" class="btn btn-danger" required>
+                <input type="submit" class="btn btn-danger" required >
             </form>
         </div>
     </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUserRequest;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 class AdminController extends Controller
@@ -36,16 +37,18 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUserRequest  $myRequestObject)
+
     {
+        $data=$myRequestObject->all();
         //
-        Admin::create($request->validate([
-            'name'=> 'required',
-            'password'=> 'required',
-            'mobile'=> 'required',
-            'email' => 'required|unique:admins'
-        ]));
-        return redirect('admins/index');
+//        Admin::create($request->validate([
+//            'name'=> 'required',
+//            'password'=> 'required',
+//            'mobile'=> 'required',
+//            'email' => 'required|unique:admins'
+//        ]));
+       // return redirect('/admins/index');
     }
 
     /**
@@ -91,7 +94,7 @@ class AdminController extends Controller
         $admin->email = $request->email;
         $admin->save();
 
-        return redirect('admins/index');
+     //   return redirect('admins/index');
     }
 
     /**
@@ -104,7 +107,7 @@ class AdminController extends Controller
     {
         //
         Admin::where('id', $id)->delete();
-        return redirect('admins');
+        return redirect('/admins');
 
     }
 }

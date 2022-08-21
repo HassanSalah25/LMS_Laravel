@@ -18,7 +18,7 @@ class StoreUserRequest extends FormRequest
 //            {
 //                return true;
 //            }
-        return false;
+        return true;
     }
 
     /**
@@ -35,8 +35,11 @@ class StoreUserRequest extends FormRequest
 
         return [
             //write down your validations rules :)
-            'title' => 'required|unique:posts|max:255',
-            'body' => 'required',
+
+            'name'=> 'required',
+            'password'=> 'required',
+            'mobile'=> 'required',
+            'email' => 'required|unique:admins',
         ];
     }
 }

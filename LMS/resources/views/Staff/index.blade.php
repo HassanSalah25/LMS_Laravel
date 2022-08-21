@@ -1,27 +1,7 @@
 
-<!doctype html>
-<html lang="en">
-<head>
-    @extends('layouts.app')
-    @section('content')
 
-    @endsection
-    @php
-
-        echo "<h1>holaa9</h1>";
-
-
-
-    @endphp
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
- <ul class="container"></ul>
-
+@extends('layouts.app')
+@section('content')
 <div class="container-xl">
     <div class="table-responsive">
         <div class="table-wrapper">
@@ -48,7 +28,7 @@
                 </thead>
                 <tbody>
 
-                @forelse ($Staff as $Staff)
+                @forelse ($Staffs as $Staff)
                     <tr scope="row">
                         <td>
                             {{$Staff->id}}
@@ -62,7 +42,7 @@
                             <a href="{{ route('Staffs.edit', $Staff) }}" class="settings" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
                         </td>
                         <td class="delete">
-                            <form action="staff/destroy/{{$staff->id}}" method="post"
+                            <form action="staff/destroy/{{$Staff->id}}" method="post"
                                   class="form-hidden">
                                 <button class="btn btn-danger delete-author">Delete</button>
                                 @csrf
@@ -77,8 +57,6 @@
 
                 </tbody>
             </table>
-            <h1>holaa9</h1>
-
             <!--pages Link -->
             <div class="clearfix">
                 <div class="hint-text">Showing <b>5</b> out of <b>25</b> records</div>
@@ -95,8 +73,7 @@
         </div>
     </div>
 </div>
-</body>
-</html>
+
 
 
 
@@ -269,4 +246,5 @@ table.table .avatar {
     font-size: 13px;
 }
 </style>
+
 @endsection
