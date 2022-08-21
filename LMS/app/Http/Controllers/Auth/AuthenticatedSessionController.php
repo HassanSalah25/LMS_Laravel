@@ -7,7 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\Admin;
 class AuthenticatedSessionController extends Controller
 {
     /**
@@ -28,6 +28,11 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
+        Admin::create($request->all());
+
+        return redirect('admins/index');
+
+
         $request->authenticate();
 
         $request->session()->regenerate();
