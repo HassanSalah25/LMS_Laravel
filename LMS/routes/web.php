@@ -28,49 +28,61 @@ Route::get('/dashboard', function () {
 
 // admin CRUD
      //closure function
-    Route::get('/admins', [AdminController::class, 'index'])->name('Admins')->middleware('auth');
-    Route::get('/admins/create', [AdminController::class, 'create'])->name('Admins.create')->middleware('auth');
-    Route::get('/admins/edit/{admin}', [AdminController::class, 'edit'])->name('Admins.edit')->middleware('auth');
-    Route::post('/admins/update/{id}', [AdminController::class, 'update'])->name('Admins.update')->middleware('auth');
-    Route::post('/admins/destroy/{id}', [AdminController::class, 'destroy'])->name('Admins.destroy')->middleware('auth');
-    Route::post('/admins/create', [AdminController::class, 'store'])->name('Admins.store')->middleware('auth');
+//    Route::get('/admins', [AdminController::class, 'index'])->name('Admins')->middleware('auth');
+//    Route::get('/admins/create', [AdminController::class, 'create'])->name('Admins.create')->middleware('auth');
+//    Route::get('/admins/edit/{admin}', [AdminController::class, 'edit'])->name('Admins.edit')->middleware('auth');
+//    Route::post('/admins/update/{id}', [AdminController::class, 'update'])->name('Admins.update')->middleware('auth');
+//    Route::post('/admins/destroy/{id}', [AdminController::class, 'destroy'])->name('Admins.destroy')->middleware('auth');
+//    Route::post('/admins/create', [AdminController::class, 'store'])->name('Admins.store')->middleware('auth');
 
 
 
 // admin CRUD
-//Route::group(function ()    {[   //closure function
-//    Route::get('/admins', [AdminController::class, 'index'])->name('Admins')
-// ,   Route::get('/admins/create', [AdminController::class, 'create'])->name('Admins.create')
-//  ,  Route::get('/admins/edit/{admin}', [AdminController::class, 'edit'])->name('Admins.edit')
-//   , Route::post('/admins/update/{id}', [AdminController::class, 'update'])->name('Admins.update')
-//    ,Route::post('/admins/destroy/{id}', [AdminController::class, 'destroy'])->name('Admins.destroy')
-//    ,Route::post('/admins/create', [AdminController::class, 'store'])->name('Admins.store')
-//];
-//})->middleware('auth');
+Route::middleware('auth')->group(function (){   //closure functionRoute::get('/admins', [AdminController::class, 'index'])->name('Admins')
+    Route::get('/admins', [AdminController::class, 'index'])->name('Admins');
+    Route::get('/admins/create', [AdminController::class, 'create'])->name('Admins.create');
+    Route::get('/admins/edit/{admin}', [AdminController::class, 'edit'])->name('Admins.edit');
+    Route::post('/admins/update/{id}', [AdminController::class, 'update'])->name('Admins.update');
+    Route::post('/admins/destroy/{id}', [AdminController::class, 'destroy'])->name('Admins.destroy');
+    Route::post('/admins/store', [AdminController::class, 'store'])->name('Admins.store');
+
+});
 
 
 // Student CRUD
-Route::get('/students', [StudentController::class, 'index'])->name('Students')->middleware('auth');
-Route::get('/students/create', [StudentController::class, 'create'])->name('Students.create')->middleware('auth');
-Route::get('/students/edit/{student}', [StudentController::class, 'edit'])->name('Students.edit')->middleware('auth');
-Route::post('/students/update/{id}', [StudentController::class, 'update'])->name('Students.update')->middleware('auth');
-Route::post('/students/destroy/{id}', [StudentController::class, 'destroy'])->name('Students.destroy')->middleware('auth');
-Route::post('/students/create', [StudentController::class, 'store'])->name('Students.store')->middleware('auth');
+Route::middleware('auth')->group(function (){
+
+    Route::get('/students', [StudentController::class, 'index'])->name('Students');
+    Route::get('/students/create', [StudentController::class, 'create'])->name('Students.create');
+    Route::get('/students/edit/{student}', [StudentController::class, 'edit'])->name('Students.edit');
+    Route::post('/students/update/{id}', [StudentController::class, 'update'])->name('Students.update');
+    Route::post('/students/destroy/{id}', [StudentController::class, 'destroy'])->name('Students.destroy');
+    Route::post('/students/create', [StudentController::class, 'store'])->name('Students.store');
+
+});
 
 // Staff CRUD
-Route::get('/staffs', [StaffController::class, 'index'])->name('Staffs')->middleware('auth');
-Route::get('/staffs/create', [StaffController::class, 'create'])->name('Staffs.create')->middleware('auth');
-Route::get('/staffs/edit/{student}', [StaffController::class, 'edit'])->name('Staffs.edit')->middleware('auth');
-Route::post('/staffs/update/{id}', [StaffController::class, 'update'])->name('Staffs.update')->middleware('auth');
-Route::post('/staffs/destroy/{id}', [StaffController::class, 'destroy'])->name('Staffs.destroy')->middleware('auth');
-Route::post('/staffs/create', [StaffController::class, 'store'])->name('Staffs.store')->middleware('auth');
+Route::middleware('auth')->group(function (){
+
+    Route::get('/staffs', [StaffController::class, 'index'])->name('Staffs');
+    Route::get('/staffs/create', [StaffController::class, 'create'])->name('Staffs.create');
+    Route::get('/staffs/edit/{student}', [StaffController::class, 'edit'])->name('Staffs.edit');
+    Route::post('/staffs/update/{id}', [StaffController::class, 'update'])->name('Staffs.update');
+    Route::post('/staffs/destroy/{id}', [StaffController::class, 'destroy'])->name('Staffs.destroy');
+    Route::post('/staffs/create', [StaffController::class, 'store'])->name('Staffs.store');
+
+});
 
 // course CRUD
-Route::get('/courses', [CoursesController::class, 'index'])->name('courses')->middleware('auth');
-Route::get('/courses/create', [CoursesController::class, 'create'])->name('courses.create')->middleware('auth');
-Route::get  ('/courses/edit/{course}', [CoursesController::class, 'edit'])->name('courses.edit')->middleware('auth');
-Route::post('/courses/update/{id}', [CoursesController::class, 'update'])->name('courses.update')->middleware('auth');
-Route::post('/courses/destroy/{id}', [CoursesController::class, 'destroy'])->name('courses.destroy')->middleware('auth');
-Route::post('/courses/create', [CoursesController::class, 'store'])->name('courses.store')->middleware('auth');
+Route::middleware('auth')->group(function (){
+
+    Route::get('/courses', [CoursesController::class, 'index'])->name('courses');
+    Route::get('/courses/create', [CoursesController::class, 'create'])->name('courses.create');
+    Route::get  ('/courses/edit/{course}', [CoursesController::class, 'edit'])->name('courses.edit');
+    Route::post('/courses/update/{id}', [CoursesController::class, 'update'])->name('courses.update');
+    Route::post('/courses/destroy/{id}', [CoursesController::class, 'destroy'])->name('courses.destroy');
+    Route::post('/courses/create', [CoursesController::class, 'store'])->name('courses.store');
+
+});
 
 require __DIR__.'/auth.php';
