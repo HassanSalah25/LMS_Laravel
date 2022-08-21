@@ -34,7 +34,7 @@
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Description:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" placeholder="description" name="description" value="{{ $course->description   }}">
+                        <input class="form-control" type="text" placeholder="description" name="description" value="{{ $course->description  }}">
                     </div>
                 </div>
                 <div class="form-group">

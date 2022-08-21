@@ -84,9 +84,10 @@ class CoursesController extends Controller
         $course->name = $request->name;
         $course->description = $request->description;
         $course->cover_image = $request->cover_image;
+        $course->hours = $request->hours;
+        $course->certificate_image = $request->certificate_image;
         $course->position = $request->position;
         $course->is_active = $request->is_active;
-        $course->certificate_image = $request->certificate_image;
         $course->save();
 
         return redirect('courses');

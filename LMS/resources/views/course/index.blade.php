@@ -20,7 +20,6 @@
                         <th>#</th>
                         <th>Name</th>
                         <th>description</th>
-                        <th>cover_image</th>
                         <th>hours</th>
                         <th>position</th>
                         <th>is_active</th>
@@ -43,7 +42,6 @@
                         <td>{{$course->position}}</td>
                         <td>{{$course->is_active}}</td>
                         <td>{{$course->certificate_image}}</td>
-                        <td>{{$course->created_by}}</td>
                         <td>
                             <a href="{{ route('courses.edit', $course) }}" class="settings" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
                         </td>
