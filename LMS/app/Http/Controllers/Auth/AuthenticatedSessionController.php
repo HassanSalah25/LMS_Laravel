@@ -28,9 +28,9 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
-        Admin::create($request->all());
+       // Admin::create($request->all());
 
-        return redirect('admins/index');
+        //return redirect('admins/index');
 
 
         $request->authenticate();
