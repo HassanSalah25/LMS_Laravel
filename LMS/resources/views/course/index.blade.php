@@ -9,7 +9,7 @@
                         <h2>Course <b>Management</b></h2>
                     </div>
                     <div class="col-sm-7">
-                        <a href="courses/create" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                        <a href="create" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
                         <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>
                     </div>
                 </div>
@@ -24,6 +24,7 @@
                         <th>position</th>
                         <th>is_active</th>
                         <th>certificate_image</th>
+                        <th>Student</th>
                         <th>Action</th>
                     </tr>
                 </thead>

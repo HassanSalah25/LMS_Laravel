@@ -72,8 +72,6 @@
         </div>
     </div>
 </div>
-</body>
-</html>
 
 
 <!-- Style PART -->
