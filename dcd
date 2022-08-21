@@ -1,0 +1,253 @@
+[33mcommit a8d4340a71927ef1c4750592569d57b6e596b9e6[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Sat Aug 20 20:24:45 2022 +0200
+
+    new Seeders
+
+[33mcommit 8920239de00f349dab4b72c85b4d7087d5de8f0e[m
+Author: Hassan <salemhassan175@gmail.com>
+Date:   Sat Aug 20 19:49:02 2022 +0200
+
+    update admin controller
+
+[33mcommit ef4504106bbb74414b13b7e43720aee3dc640fa8[m
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Sat Aug 20 19:35:09 2022 +0200
+
+    updated Factory with models
+
+[33mcommit cd6b3308833a919d99e178a3cbebdfbe7bc3b919[m
+Author: Hassan <salemhassan175@gmail.com>
+Date:   Sat Aug 20 06:59:22 2022 +0200
+
+    create admin issue
+
+[33mcommit 17b8f28d7c82c68e2ad92fd49af8976b99858d63[m
+Author: Hassan <salemhassan175@gmail.com>
+Date:   Sat Aug 20 06:17:09 2022 +0200
+
+    factory update
+
+[33mcommit ef2e26d6a677415aee90e6839034e87c467f2ee0[m
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Sat Aug 20 06:16:38 2022 +0200
+
+    new design
+
+[33mcommit ae1eacc174a74dc0d7172cdf96c99b1df4c9dfd5[m
+Author: Hassan <salemhassan175@gmail.com>
+Date:   Sat Aug 20 04:45:53 2022 +0200
+
+    update route admin
+
+[33mcommit c3e43e3351cf7b870d3e60705068fec82d8d5e85[m
+Author: Hassan <salemhassan175@gmail.com>
+Date:   Sat Aug 20 04:28:38 2022 +0200
+
+    update admin view
+
+[33mcommit 689c7b307e458b9efaeee9449ade8f1cf706672f[m
+Author: Hassan <salemhassan175@gmail.com>
+Date:   Sat Aug 20 04:18:15 2022 +0200
+
+    view admins
+
+[33mcommit 6d74bc15b153afe8f4572486e0e6d332910c7c6c[m
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Sat Aug 20 04:17:16 2022 +0200
+
+    factory_NEED fixingALL
+
+[33mcommit 59ef852ffffa9410719f83b8f2b30a41b86a1311[m
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Sat Aug 20 04:12:20 2022 +0200
+
+    semi_SeedersDone
+
+[33mcommit 92e9904f94f3da4413e3c3cf16e4808a30d7662c[m
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Sat Aug 20 02:36:22 2022 +0200
+
+    updates_ForFactory
+
+[33mcommit a5278c4fbe2e08767e9963d07e355c6d45e9ab92[m
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Sat Aug 20 01:28:03 2022 +0200
+
+    workingAdminFactory
+
+[33mcommit 8f20104120a7ff881b95742ebd017383726c6154[m
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Sat Aug 20 00:43:28 2022 +0200
+
+    AdminFactory_needsFixing
+
+[33mcommit 9ac8bf4086e37b0e4eca954058171d064ea6bd0d[m
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Fri Aug 19 22:27:32 2022 +0200
+
+    myFactoryUpdate_1
+
+[33mcommit abeb983ec480c9fbeaf02ed70a12d4210c5cb8d7[m
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Fri Aug 19 22:24:30 2022 +0200
+
+    updatedFactoriesCLasses
+
+[33mcommit e01f5643c0276bc3812b1cab52f9f4f1fa468cb5[m
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Fri Aug 19 21:49:56 2022 +0200
+
+    SeedsDataWithFactories
+
+[33mcommit b471bf03ff76088089c6c44077b61410e6153d33[m
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Fri Aug 19 19:32:50 2022 +0200
+
+    update After_ERD_with NO_env FILE
+
+[33mcommit 79e44b73379d9d0c36e8925ac08a12ce4e414d87[m
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Fri Aug 19 19:26:39 2022 +0200
+
+    revertTo_relationDB
+
+[33mcommit cacc4d808bad53de991bfe9e67991c0b9564bda7[m
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Fri Aug 19 19:24:10 2022 +0200
+
+    factorySeeder
+
+[33mcommit 9265609b1183a201e45ac561b3f604fba7e3c658[m
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Fri Aug 19 19:21:54 2022 +0200
+
+    Revert "modify migeration"
+    
+    This reverts commit 0c72dbaf7f576211a206ac2ec3cb5b27d6222403.
+
+[33mcommit 0c72dbaf7f576211a206ac2ec3cb5b27d6222403[m
+Author: Hassan <salemhassan175@gmail.com>
+Date:   Fri Aug 19 15:35:18 2022 +0200
+
+    modify migeration
+
+[33mcommit 77b1f59897bf0b95ed488947f166441824e35d03[m
+Author: Hassan <salemhassan175@gmail.com>
+Date:   Fri Aug 19 15:32:25 2022 +0200
+
+    modify migerations
+
+[33mcommit 6d4b904c3c92f13bdf15a9d62e49a29b35ef8d83[m
+Author: Hassan <salemhassan175@gmail.com>
+Date:   Fri Aug 19 15:28:02 2022 +0200
+
+    new
+
+[33mcommit 3921a833d29461dbfad6819604567b664d719ad8[m
+Merge: 9ca842c 9cac17c
+Author: Hassan <salemhassan175@gmail.com>
+Date:   Fri Aug 19 15:15:16 2022 +0200
+
+    Merge branch 'main' of https://github.com/HassanSalah25/LMS_Laravel
+
+[33mcommit 9ca842c99a2ba4dccef6bfc37d08aa80686ca072[m
+Author: Hassan <salemhassan175@gmail.com>
+Date:   Fri Aug 19 15:15:02 2022 +0200
+
+    add new  and relaions DB
+
+[33mcommit 9cac17cd3e1ca336525b1213e684e65b2cf7b6e9[m
+Merge: 419d005 ab21581
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Fri Aug 19 15:11:14 2022 +0200
+
+    Merge branch 'main' of https://github.com/HassanSalah25/LMS_Laravel
+
+[33mcommit 419d0054d294e66e0008a6a725b57f34ae6a22e7[m
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Fri Aug 19 14:56:00 2022 +0200
+
+    REgandLogin
+
+[33mcommit ab215810450247e1ac42be312570689b880f4b47[m
+Author: Hassan <salemhassan175@gmail.com>
+Date:   Fri Aug 19 14:39:46 2022 +0200
+
+    update relations database
+
+[33mcommit 7feede0fad3ca58516110746de327e75c0f5a20d[m
+Author: Hassan <salemhassan175@gmail.com>
+Date:   Fri Aug 19 14:10:03 2022 +0200
+
+    added batch table
+
+[33mcommit c1484cddada26cd86bbba49547f0107766734040[m
+Merge: 5ae0044 85d8315
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Fri Aug 19 03:52:53 2022 +0200
+
+    Merge branch 'main' of https://github.com/HassanSalah25/LMS_Laravel
+
+[33mcommit 85d831500bec5ab66447647a51ec714d99d07baa[m
+Author: Hassan <salemhassan175@gmail.com>
+Date:   Fri Aug 19 03:41:49 2022 +0200
+
+    added controllers
+
+[33mcommit 5ae0044f69aa5838979bf109564cfc65b4fbd85c[m
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Fri Aug 19 03:40:42 2022 +0200
+
+    modelAndMigrationStdStaffAdmin
+
+[33mcommit 20c3fc93517e64c2650e9d3e2b45e418157787ca[m
+Author: Hassan <salemhassan175@gmail.com>
+Date:   Fri Aug 19 03:32:20 2022 +0200
+
+    add new tables (Feedback,Category,Lesson,module)
+
+[33mcommit ec878fe7b16ef5d440fc1419c2998116ce045b2e[m
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Thu Aug 18 21:54:22 2022 +0200
+
+    addMigration_completeIssuee1_done
+
+[33mcommit 8fb590d52b78205942f78b7bfab2c6b884734ab1[m
+Author: Hassan <salemhassan175@gmail.com>
+Date:   Thu Aug 18 00:21:22 2022 +0200
+
+    courses and certificate models update
+
+[33mcommit 101f376ca82d3a46636a43b0ef9b0d2f280a7486[m
+Merge: eef7dec f662f3a
+Author: hassangomaa <58165219+hassangomaa@users.noreply.github.com>
+Date:   Wed Aug 17 20:27:12 2022 +0200
+
+    Merge pull request #3 from HassanSalah25/hassan974
+    
+    issue_1_Done_by_hassan974
+
+[33mcommit f662f3a7ad9185ba0a0d52442d91515c630e056c[m
+Author: hassangomaa <animehassan05@gmail.com>
+Date:   Wed Aug 17 20:20:42 2022 +0200
+
+    issue_1_Done_by_hassan974
+
+[33mcommit eef7deca27d2155282d73c5ae0f02e24af3a6e59[m
+Author: Hassan <salemhassan175@gmail.com>
+Date:   Wed Aug 17 01:48:54 2022 +0200
+
+    init Laravel
+
+[33mcommit 30ecf4ab015a2991eff7abd4db71c38b00c54059[m
+Author: HassanSalah25 <88258396+HassanSalah25@users.noreply.github.com>
+Date:   Wed Aug 17 01:40:54 2022 +0200
+
+    init edit
+
+[33mcommit 13f92e7f16be1bc17a64626d5ca2214d99220df9[m
+Author: HassanSalah25 <88258396+HassanSalah25@users.noreply.github.com>
+Date:   Wed Aug 17 01:08:15 2022 +0200
+
+    Initial commit
