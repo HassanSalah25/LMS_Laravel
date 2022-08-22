@@ -30,9 +30,11 @@
                 </thead>
                  <tbody>
 
+                 {{--Calling the model of this controller passed by Route--}}
                     @forelse ($courses as $course)
                     <tr scope="row">
                         <td>
+
                         {{$course->id}}
                         </td>
                         <td>{{$course->name}}</td>
@@ -43,6 +45,7 @@
                         <td>{{$course->position}}</td>
                         <td>{{$course->is_active}}</td>
                         <td>{{$course->certificate_image}}</td>
+                        {{--Calling the relationship tables, Note :the null value returns error! --}}
                         <td>{{$course->student->name ?? null}}</td>
                         <td>
                             <a href="{{ route('courses.edit', $course) }}" class="settings" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
