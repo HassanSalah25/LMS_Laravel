@@ -14,6 +14,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+    ///old auth way for api service
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//        download Snatcum package api tokens new Auth way
+
+
+//Route::get('course/',function (){
+//    return [
+//        'id' => '1',
+//        'name' => 'DS',
+//    ];
+//});
+
+Route::get('course/',[\App\Http\Controllers\API\CourseController::class ,'index']);

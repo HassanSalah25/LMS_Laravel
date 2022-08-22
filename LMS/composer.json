@@ -10,7 +10,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/breeze": "^2.1",
         "laravel/framework": "^8.0",
-        "laravel/sanctum": "^2.11",
+        "laravel/sanctum": "^2.1",
         "laravel/tinker": "^2.5",
         "laravelcollective/html": "^6.3"
     },

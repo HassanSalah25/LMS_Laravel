@@ -15,7 +15,12 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        //
+        //return the JSON file
+       // return Course::all();
+
+
+
+//        return the browser view page
         return view('course.index', [
             'courses' => Course::all()
         ]);

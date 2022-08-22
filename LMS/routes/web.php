@@ -1,14 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Admin;
+//use App\Models\Admin;
 use App\Http\Controllers\AdminController;
  use App\Http\Controllers\StudentController;
  use App\Http\Controllers\CoursesController;
  use App\Http\Controllers\StaffController;
 
 Route::get('/', function () {
-    return view('welcome');
+   return view('welcome');
+    //return view('Maindashboard/index');
+   // return  ' HOlaa ! <h2> <a href="/dashboard"> </h2>';
+
 });
 
 
@@ -20,7 +23,8 @@ Route::get('/admin', function () {//NewDesign
 
 
 Route::get('/dashboard', function () {
-   return view('Maindashboard/index');
+    return view('welcome');
+   //return view('Maindashboard/index');
    // return \File::get(public_path() . '/SPAindex.html');
 
  })->middleware(['auth'])->name('dashboard');
@@ -85,4 +89,5 @@ Route::middleware('auth')->group(function (){
 
 });
 
+///seperated file for the Auth procees ++ import
 require __DIR__.'/auth.php';

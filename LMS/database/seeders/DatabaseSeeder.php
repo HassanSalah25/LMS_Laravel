@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\CourseStudent;
 use Illuminate\Database\Seeder;
 // MAIN Seeder Class by:laravel
 
@@ -54,7 +55,7 @@ class DatabaseSeeder extends Seeder
          Staff::factory()->times(100)->create();
          Student::factory()->times(100)->create();
          User::factory()->times(100)->create();
-
+        CourseStudent::factory()->times(100)->create();
 
         //way 2
          //$this->call(UsersSeeder::class);

@@ -24,8 +24,8 @@ class CourseFactory extends Factory
             'certificate_image'         => $this->faker->name,
             'position'         => $this->faker->text,
             'is_active'         => $this->faker->text,
-            'student_id'          => Student::all('id'),
-            'created_by'         => $this->faker->name,
+            'student_id'          => $this->faker->randomDigit,//Student::all('id'),
+            'created_by'         =>  $this->faker->name,
 
             // MariaDB [lms]> describe courses;
             // +-------------------+--------------\-------+------+-----+---------+----------------+

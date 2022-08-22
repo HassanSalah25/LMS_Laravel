@@ -1,0 +1,22 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class CourseStudentFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            //
+            "course_id" => $this->faker->randomDigit(),
+            "student_id" => $this->faker->randomDigit(),
+        ];
+    }
+}

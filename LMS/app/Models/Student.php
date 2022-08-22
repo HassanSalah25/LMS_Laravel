@@ -31,4 +31,8 @@ class Student extends Model
     {
         return $this->hasMany(Batch::class);
     }
+    public function courseStudent(): BelongsTo
+    {
+        return $this->hasMany(CourseStudent::class);
+    }
 }
