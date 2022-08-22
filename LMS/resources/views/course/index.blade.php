@@ -43,6 +43,7 @@
                         <td>{{$course->position}}</td>
                         <td>{{$course->is_active}}</td>
                         <td>{{$course->certificate_image}}</td>
+                        <td>{{$course->student->name ?? null}}</td>
                         <td>
                             <a href="{{ route('courses.edit', $course) }}" class="settings" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
                         </td>

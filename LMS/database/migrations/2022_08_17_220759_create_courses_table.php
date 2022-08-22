@@ -23,8 +23,9 @@ class CreateCoursesTable extends Migration
             $table->string('certificate_image');
             $table->string('position');
             $table->string('is_active');
+                $table->string('student_id');
             $table->string('created_by');
-            
+
         });
     }
 

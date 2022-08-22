@@ -16,14 +16,19 @@ class Student extends Model
     protected $table = 'students';
 	public $timestamps = true;
     protected $guarded =[];
-
+    protected $fillable =
+        ["name", 'email', 'password'];
      /**
      * Get the batch that owns the Student
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function batch(): BelongsTo
+    public function course()
     {
-        return $this->belongsTo(Batch::class);
+        return $this->hasMany(Course::class);
+    }
+     public function batch(): BelongsTo
+    {
+        return $this->hasMany(Batch::class);
     }
 }

@@ -14,9 +14,14 @@ class Course extends Model
 
     protected $table = 'courses';
 	public $timestamps = true;
-    protected $guarded =[   
+    protected $guarded =[
 
     ];
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
 
     public function feedback()
     {

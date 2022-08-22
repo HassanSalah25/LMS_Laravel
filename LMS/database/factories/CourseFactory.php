@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Student;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CourseFactory extends Factory
@@ -23,10 +24,11 @@ class CourseFactory extends Factory
             'certificate_image'         => $this->faker->randomDigit,
             'position'         => $this->faker->randomDigit,
             'is_active'         => $this->faker->randomDigit,
+            'student_id'          => Student::all('id'),
             'created_by'         => $this->faker->randomDigit,
 
             // MariaDB [lms]> describe courses;
-            // +-------------------+---------------------+------+-----+---------+----------------+
+            // +-------------------+--------------\-------+------+-----+---------+----------------+
             // | Field             | Type                | Null | Key | Default | Extra          |
             // +-------------------+---------------------+------+-----+---------+----------------+
             // | id                | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
@@ -41,7 +43,7 @@ class CourseFactory extends Factory
             // | is_active         | varchar(255)        | NO   |     | NULL    |                |
             // | created_by        | varchar(255)        | NO   |     | NULL    |                |
             // +-------------------+---------------------+------+-----+---------+----------------+
-            
+
 
         ];
     }
