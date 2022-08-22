@@ -38,7 +38,7 @@ class Course extends Model
      */
     public function coursesCategory(): BelongsTo
     {
-        return $this->belongsTo(courses_category::class);
+        return $this->hasMany(courses_category::class);
     }
 //    public function courseStudent(): BelongsTo
 //    {
