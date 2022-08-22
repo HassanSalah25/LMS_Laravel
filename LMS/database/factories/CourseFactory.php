@@ -18,14 +18,14 @@ class CourseFactory extends Factory
             'created_at'    => $this->faker-> dateTimeThisMonth,
             'updated_at'    => $this->faker-> dateTimeThisMonth,
             'name'          => $this->faker->name,
-            'description'   => $this->faker->randomDigit,
-            'cover_image'   => $this->faker->randomDigit,
-            'hours'         => $this->faker->randomDigit,
-            'certificate_image'         => $this->faker->randomDigit,
-            'position'         => $this->faker->randomDigit,
-            'is_active'         => $this->faker->randomDigit,
+            'description'   => $this->faker->text,
+            'cover_image'   => $this->faker->text,
+            'hours'         => $this->faker->dateTimeThisMonth,
+            'certificate_image'         => $this->faker->name,
+            'position'         => $this->faker->text,
+            'is_active'         => $this->faker->text,
             'student_id'          => Student::all('id'),
-            'created_by'         => $this->faker->randomDigit,
+            'created_by'         => $this->faker->name,
 
             // MariaDB [lms]> describe courses;
             // +-------------------+--------------\-------+------+-----+---------+----------------+

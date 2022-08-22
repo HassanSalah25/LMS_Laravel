@@ -42,15 +42,15 @@ class DatabaseSeeder extends Seeder
         // # call the seeder for your table
          //$this->call(AdminsSeeder::class);
          Admin::factory()->times(100)->create();
-         Batch::factory()->times(10)->create();
-         Category::factory()->times(10)->create();
-         Certification::factory()->times(10)->create();
-         CourseCategory::factory()->times(10)->create();
-         Course::factory()->times(10)->create();
-         Enroll::factory()->times(10)->create();
-         Feedback::factory()->times(10)->create();
-         Lesson::factory()->times(10)->create();
-         Module::factory()->times(10)->create();
+         Batch::factory()->times(100)->create();
+         Category::factory()->times(100)->create();
+         Certification::factory()->times(100)->create();
+         CourseCategory::factory()->times(100)->create();
+         Course::factory()->times(100)->create();
+         Enroll::factory()->times(100)->create();
+         Feedback::factory()->times(100)->create();
+         Lesson::factory()->times(100)->create();
+         Module::factory()->times(100)->create();
          Staff::factory()->times(100)->create();
          Student::factory()->times(100)->create();
          User::factory()->times(100)->create();
