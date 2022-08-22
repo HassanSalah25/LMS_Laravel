@@ -8,7 +8,8 @@ use App\Http\Controllers\AdminController;
  use App\Http\Controllers\StaffController;
 
 Route::get('/', function () {
-   return view('welcome');
+    return view('welcome');
+   // return view('Home/index');
     //return view('Maindashboard/index');
    // return  ' HOlaa ! <h2> <a href="/dashboard"> </h2>';
 

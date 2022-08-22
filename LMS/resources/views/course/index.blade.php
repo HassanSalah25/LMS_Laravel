@@ -1,4 +1,4 @@
-{{--@extends('layouts.app')--}}
+@extends('layouts.app')
 @section('content')
 <div class="container-xl">
     <div class="table-responsive">
@@ -46,7 +46,7 @@
                         <td>{{$course->is_active}}</td>
                         <td>{{$course->certificate_image}}</td>
                         {{--Calling the relationship tables, Note :the null value returns error! --}}
-                        <td>{{$course->courseStudent->student}}</td>
+{{--                        <td>{{$course->courseStudent->student}}</td>--}}
                         <td>
                             <a href="{{ route('courses.edit', $course) }}" class="settings" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
                         </td>
