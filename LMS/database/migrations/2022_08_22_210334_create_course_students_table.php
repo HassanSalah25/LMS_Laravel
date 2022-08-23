@@ -13,10 +13,12 @@ class CreateCourseStudentsTable extends Migration
      */
     public function up()
     {
+//        $table->unsignedBigInteger('user_id');
+//        $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         Schema::create('course_students', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('course_id');
+            $table->string('course_id');//->unique()->fore;
             $table->string('student_id');
         });
     }

@@ -179,3 +179,4 @@
         color: #fff;
     }
 </style>
+@endsection

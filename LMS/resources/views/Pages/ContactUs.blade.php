@@ -1,5 +1,4 @@
-<?php
-?>
+
 @extends('layouts.app')
 
 @section('content')
@@ -96,3 +95,5 @@
             box-shadow: 0 1px 1px 1px rgba(0, 123, 255, .25) !important
         }
     </style>
+
+@endsection
