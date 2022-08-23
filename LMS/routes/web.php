@@ -9,9 +9,42 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return view('welcome');
-   // return view('Home/index');
+    // return view('Home/index');
     //return view('Maindashboard/index');
-   // return  ' HOlaa ! <h2> <a href="/dashboard"> </h2>';
+    // return  ' HOlaa ! <h2> <a href="/dashboard"> </h2>';
+
+});
+Route::get('/main', function () {
+    return view('Pages/dashboard');
+
+
+});
+Route::get('/user', function () {
+    return view('Pages/UserProfile');
+
+
+});
+
+Route::get('/market', function () {
+    return view('Pages/market');
+
+
+});
+
+Route::get('/contact-us', function () {
+    return view('Pages/ContactUs');
+
+
+});
+
+Route::get('/order', function () {
+    return view('Pages/Order');
+
+
+});
+Route::get('/posts', function () {
+    return view('Pages/Posts');
+
 
 });
 
