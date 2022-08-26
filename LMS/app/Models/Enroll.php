@@ -13,4 +13,25 @@ class Enroll extends Model
     protected $table = 'enrolls';
 	public $timestamps = true;
     protected $guarded =[];
+
+    /**
+     * Get all of the student for the Enroll
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function student(): HasMany
+    {
+        return $this->hasMany(Student::class);
+    }
+
+    /**
+     * Get all of the course for the Enroll
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function course(): HasMany
+    {
+        return $this->hasMany(Course::class); 
+    }
 }
+

@@ -23,6 +23,7 @@ class CreateStudentsTable extends Migration
 			$table->tinyInteger('is_enrolled')->default('0');
 			$table->tinyInteger('is_active')->default('1');
 			$table->tinyInteger('is_balance')->default('0');
+
 			$table->timestamps();
 			$table->softDeletes();
         });

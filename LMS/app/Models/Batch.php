@@ -24,4 +24,8 @@ class Batch extends Model
         return $this->hasMany(Certification::class);
     }
 
+    public function course()
+    {
+        return $this->hasMany(Course::class);
+    }
 }

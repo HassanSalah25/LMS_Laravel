@@ -18,6 +18,11 @@ class Course extends Model
 
     ];
 
+    public function batch()
+    {
+        return $this->belongsTo(Batch::class);
+    }
+
     public function student()
     {
         return $this->belongsTo(Student::class);
@@ -31,19 +36,23 @@ class Course extends Model
     {
         return $this->hasMany(Module::class);
     }
-      /**
-     * Get the batch that owns the Student
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function coursesCategory(): BelongsTo
+
+    public function Category(): BelongsTo
     {
-        return $this->hasMany(courses_category::class);
+        return $this->belongsto(Category::class);
     }
 
-//    public function courseStudent(): BelongsTo
-//    {
-//        return $this->hasMany(CourseStudent::class);
-//    }
+    public function courseStudent(): BelongsTo
+    {
+        return $this->hasMany(CourseStudent::class);
+    }
 
+    public function enroll(): BelongsTo
+    {
+        return $this->hasMany(Enroll::class);
+    }
+    public function staff(): HasOne
+    {
+        return $this->hasOne(Staff::class);
+    }
 }

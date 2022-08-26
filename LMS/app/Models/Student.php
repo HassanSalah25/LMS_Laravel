@@ -29,10 +29,19 @@ class Student extends Model
     }
      public function batch(): BelongsTo
     {
-        return $this->hasMany(Batch::class);
+        return $this->belongsto(Batch::class);
     }
     public function courseStudent(): BelongsTo
     {
         return $this->hasMany(CourseStudent::class);
+    }
+    public function enroll(): BelongsTo
+    {
+        return $this->hasMany(Enroll::class);
+    }
+
+    public function feedback(): BelongsTo
+    {
+        return $this->hasone(Feddback::class);
     }
 }
