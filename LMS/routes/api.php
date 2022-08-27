@@ -37,7 +37,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['middleware' => ['api'], 'namespace' => 'Api'], function () {
 
 
-    Route::group(['prefix' => 'admin','namespace'=>'Admin'],f   unction (){
+    Route::group(['prefix' => 'admin','namespace'=>'Admin'],function (){
         Route::post('login', [AuthController::class,'login']);
         Route::post('logout',[AuthController::class,'logout']);
         Route::post('course', [CourseController::class,'index'])->middleware(['auth.guards:admin-api']);
