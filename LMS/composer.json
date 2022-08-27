@@ -12,7 +12,9 @@
         "laravel/framework": "^8.0",
         "laravel/sanctum": "^2.1",
         "laravel/tinker": "^2.5",
-        "laravelcollective/html": "^6.3"
+        "laravel/ui": "*",
+        "laravelcollective/html": "^6.3",
+        "tymon/jwt-auth": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.7",

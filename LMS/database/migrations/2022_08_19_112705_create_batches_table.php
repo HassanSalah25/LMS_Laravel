@@ -17,6 +17,7 @@ class CreateBatchesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('staff_id');
+            $table->string('student_id');
             $table->string('course_id');
             $table->string('name');
             $table->string('start_date');

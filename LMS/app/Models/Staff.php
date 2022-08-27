@@ -16,4 +16,14 @@ class Staff extends Model
     protected $table = 'staffs';
 	public $timestamps = true;
     protected $guarded =[];
+
+    /**
+     * Get the course associated with the Staff
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function course(): HasOne
+    {
+        return $this->hasOne(Course::class);
+    }
  }

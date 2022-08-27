@@ -23,7 +23,6 @@ class CreateLessonsTable extends Migration
             $table->string('position');
             $table->string('is_active');
             
-            
         });
     }
 

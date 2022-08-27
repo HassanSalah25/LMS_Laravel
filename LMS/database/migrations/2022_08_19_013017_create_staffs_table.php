@@ -20,6 +20,7 @@ class CreateStaffsTable extends Migration
             $table->string('mobile');
             $table->string('password');
             $table->tinyInteger('is_active')->default('1');
+            $table->string('course_id');
             $table->timestamps();
             $table->softDeletes();
 

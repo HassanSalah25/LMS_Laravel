@@ -11,7 +11,7 @@ class CreateCategoriesTable extends Migration {
 			$table->integer('position')->nullable();
 			$table->string('name');
 			$table->string('is_active');
-
+			$table->string('course_id');
             $table->timestamps();
 
             $table->softDeletes();

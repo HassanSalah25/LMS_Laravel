@@ -2,7 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\API\Admin\AuthController;
+use \App\Http\Controllers\API\CourseController;
+use Tymon\JWTAuth\Facades\JWTAuth;
+use Illuminate\Contracts\Auth\Guard;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -30,4 +33,24 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //    ];
 //});
 
-Route::get('course/',[\App\Http\Controllers\API\CourseController::class ,'index']);
+//all routes / api here must be api authenticated
+Route::group(['middleware' => ['api'], 'namespace' => 'Api'], function () {
+
+
+    Route::group(['prefix' => 'admin','namespace'=>'Admin'],f   unction (){
+        Route::post('login', [AuthController::class,'login']);
+        Route::post('logout',[AuthController::class,'logout']);
+        Route::post('course', [CourseController::class,'index'])->middleware(['auth.guards:admin-api']);
+    });
+
+    Route::group(['prefix' => 'user','namespace'=>'User'],function (){
+        Route::post('login','App\Http\Controllers\API\User\UserController@login') ;
+        Route::post('logout','App\Http\Controllers\API\User\UserController@logout') -> middleware(['auth.guard:user-api']);
+    });
+
+    Route::group(['prefix' => 'user' ,'middleware' => 'auth.guard:user-api'],function (){
+        Route::post('profile',function(){
+            return  \Auth::user(); // return authenticated user data
+        }) ;
+    });
+});

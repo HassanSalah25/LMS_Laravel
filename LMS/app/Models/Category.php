@@ -16,8 +16,8 @@ class Category extends Model
    *
    * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
    */
-  public function coursesCategory(): BelongsTo
+  public function course(): BelongsTo
   {
-      return $this->belongsTo(courses_category::class);
+      return $this->hasMany(Course::class);
   }
 }

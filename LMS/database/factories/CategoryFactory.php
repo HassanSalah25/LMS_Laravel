@@ -16,6 +16,7 @@ class CategoryFactory extends Factory
         return [
             //
             'position' => $this->faker->randomDigit,
+            "course_id" => $this->faker->randomDigit,
             "name" => $this->faker->name,
             "is_active" => $this->faker->name,
         ];

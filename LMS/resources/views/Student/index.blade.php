@@ -41,7 +41,7 @@
 
                         </td>
                         <td class="delete">
-                            <form action="students/destroy/{{$student->id}}" method="post"
+                            <form action="destroy/{{$student->id}}" method="post"
                                 class="form-hidden">
                                 <button class="btn btn-danger delete-author">Delete</button>
                                 @csrf

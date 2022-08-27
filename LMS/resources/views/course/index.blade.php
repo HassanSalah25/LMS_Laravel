@@ -51,10 +51,11 @@
                             <a href="{{ route('courses.edit', $course) }}" class="settings" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
                         </td>
                         <td class="delete">
-                            <form action="courses/destroy/{{$course->id}}" method="post"
+                            <form action="destroy/{{$course->id}}" method="post"
                                 class="form-hidden">
-                                <button class="btn btn-danger delete-author">Delete</button>
                                 @csrf
+                                <button class="btn btn-danger delete-author">Delete</button>
+                                
                             </form>
                         </td>
                         </tr>

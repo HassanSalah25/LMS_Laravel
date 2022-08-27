@@ -20,8 +20,8 @@ class CertificationFactory extends Factory
             //
             // "created_at"     =>$this->faker->dateTimeThisMonth,
             // "updated_at"      =>$this->faker->dateTimeThisMonth,
-            "course_id"          =>$this->faker->name,
-            "batch_id"   =>$this->faker->name,
+            "course_id" =>$this->faker->randomDigit,
+            "batch_id"   =>$this->faker->randomDigit,
             "type"    =>$this->faker->name,
             "certificate"    =>$this->faker->name,
             "created_by"    =>$this->faker->name,

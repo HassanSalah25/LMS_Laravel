@@ -6,9 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\CourseResource;
 use App\Models\Course;
 use Illuminate\Http\Request;
+use App\Traits\GeneralTrait;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class CourseController extends Controller
 {
+    use GeneralTrait;
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +21,8 @@ class CourseController extends Controller
     {
         //json file call
         //return Course::all();     //doesnt have transforamtion layer
-        return CourseResource::collection(Course::all());
+        $courses = Course::all();
+        return $this -> returnData('courses',$courses);
 
     }
 

@@ -24,4 +24,13 @@ class Feedback extends Model
     {
         return $this->belongsTo(Course::class);
     }
+    /**
+     * Get the student that owns the Feedback
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function student(): BelongsTo
+    {
+        return $this->belongsTo(Student::class);
+    }
 }
