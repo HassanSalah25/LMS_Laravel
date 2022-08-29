@@ -1,25 +1,24 @@
 <?php
 
 namespace App\Http\Controllers\API;
-
 use App\Http\Controllers\Controller;
-use App\Models\Course;
-use Illuminate\Http\Request;
+use App\Models\Feedback;
 use App\Traits\GeneralTrait;
+use Illuminate\Http\Request;
 
-class CourseController extends Controller
+class FeedbacksController extends Controller
 {
     use GeneralTrait;
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
         //
-        $course = Course::all();
-        return $this -> returnData('courses',$course);
+        $feedback = Feedback::all();
+        return $this -> returnData('feedbacks',$feedback);
     }
 
     /**
@@ -32,9 +31,9 @@ class CourseController extends Controller
 
     {
         $data=$myRequestObject->all();
-        $course = Course::create($data);
-        $course->save();
-        return $this -> returnSuccessMessage("Course added Successful!");
+        $feedback = Feedback::create($data);
+        $feedback->save();
+        return $this -> returnSuccessMessage("Feedback added Successful!");
     }
 
     /**
@@ -47,17 +46,17 @@ class CourseController extends Controller
     public function update(Request $request)
     {
         //
-        $course = Course::find($request->id);
+        $feedback = Feedback::find($request->id);
         if($request->name)
-            $course->name = $request->name;
+            $feedback->name = $request->name;
         if($request->password)
-            $course->password = $request->password;
+            $feedback->password = $request->password;
         if($request->mobile)
-            $course->mobile = $request->mobile;
+            $feedback->mobile = $request->mobile;
         if($request->email)
-            $course->email = $request->email;
-        $course->save();
-        return $this -> returnSuccessMessage("Course updated Successful!");
+            $feedback->email = $request->email;
+        $feedback->save();
+        return $this -> returnSuccessMessage("Feedback updated Successful!");
     }
 
     /**
@@ -69,7 +68,7 @@ class CourseController extends Controller
     public function destroy(Request $request)
     {
         //
-        Course::where('id', $request->id)->delete();
-        return $this -> returnSuccessMessage("Course deleted Successful!");
+        Feedback::where('id', $request->id)->delete();
+        return $this -> returnSuccessMessage("Feedback deleted Successful!");
     }
 }

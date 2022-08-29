@@ -66,17 +66,17 @@ Route::get('/dashboard', function () {
 
 // admin CRUD
      //closure function
-//    Route::get('/admins', [UserController::class, 'index'])->name('Admins')->middleware('auth');
-//    Route::get('/admins/create', [UserController::class, 'create'])->name('Admins.create')->middleware('auth');
-//    Route::get('/admins/edit/{admin}', [UserController::class, 'edit'])->name('Admins.edit')->middleware('auth');
-//    Route::post('/admins/update/{id}', [UserController::class, 'update'])->name('Admins.update')->middleware('auth');
-//    Route::post('/admins/destroy/{id}', [UserController::class, 'destroy'])->name('Admins.destroy')->middleware('auth');
-//    Route::post('/admins/create', [UserController::class, 'store'])->name('Admins.store')->middleware('auth');
+//    Route::get('/admins', [UsersController::class, 'index'])->name('Admins')->middleware('auth');
+//    Route::get('/admins/create', [UsersController::class, 'create'])->name('Admins.create')->middleware('auth');
+//    Route::get('/admins/edit/{admin}', [UsersController::class, 'edit'])->name('Admins.edit')->middleware('auth');
+//    Route::post('/admins/update/{id}', [UsersController::class, 'update'])->name('Admins.update')->middleware('auth');
+//    Route::post('/admins/destroy/{id}', [UsersController::class, 'destroy'])->name('Admins.destroy')->middleware('auth');
+//    Route::post('/admins/create', [UsersController::class, 'store'])->name('Admins.store')->middleware('auth');
 
 
 
 // admin CRUD
-Route::middleware('auth')->group(function (){   //closure functionRoute::get('/admins', [UserController::class, 'index'])->name('Admins')
+Route::middleware('auth')->group(function (){   //closure functionRoute::get('/admins', [UsersController::class, 'index'])->name('Admins')
     Route::get('/admins', [AdminController::class, 'index'])->name('Admins');
     Route::get('/admins/create', [AdminController::class, 'create'])->name('Admins.create');
     Route::get('/admins/edit/{admin}', [AdminController::class, 'edit'])->name('Admins.edit');

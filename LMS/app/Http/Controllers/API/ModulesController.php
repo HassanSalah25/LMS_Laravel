@@ -1,25 +1,22 @@
 <?php
 
 namespace App\Http\Controllers\API;
-
 use App\Http\Controllers\Controller;
-use App\Models\Course;
+use App\Models\Module;
 use Illuminate\Http\Request;
-use App\Traits\GeneralTrait;
 
-class CourseController extends Controller
+class ModulesController extends Controller
 {
-    use GeneralTrait;
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
         //
-        $course = Course::all();
-        return $this -> returnData('courses',$course);
+        $Module = Module::all();
+        return $this -> returnData('modules',$Module);
     }
 
     /**
@@ -32,9 +29,9 @@ class CourseController extends Controller
 
     {
         $data=$myRequestObject->all();
-        $course = Course::create($data);
-        $course->save();
-        return $this -> returnSuccessMessage("Course added Successful!");
+        $Module = Module::create($data);
+        $Module->save();
+        return $this -> returnSuccessMessage("Module added Successful!");
     }
 
     /**
@@ -47,17 +44,17 @@ class CourseController extends Controller
     public function update(Request $request)
     {
         //
-        $course = Course::find($request->id);
+        $Module = Module::find($request->id);
         if($request->name)
-            $course->name = $request->name;
+            $Module->name = $request->name;
         if($request->password)
-            $course->password = $request->password;
+            $Module->password = $request->password;
         if($request->mobile)
-            $course->mobile = $request->mobile;
+            $Module->mobile = $request->mobile;
         if($request->email)
-            $course->email = $request->email;
-        $course->save();
-        return $this -> returnSuccessMessage("Course updated Successful!");
+            $Module->email = $request->email;
+        $Module->save();
+        return $this -> returnSuccessMessage("Module updated Successful!");
     }
 
     /**
@@ -69,7 +66,7 @@ class CourseController extends Controller
     public function destroy(Request $request)
     {
         //
-        Course::where('id', $request->id)->delete();
-        return $this -> returnSuccessMessage("Course deleted Successful!");
+        Module::where('id', $request->id)->delete();
+        return $this -> returnSuccessMessage("Module deleted Successful!");
     }
 }

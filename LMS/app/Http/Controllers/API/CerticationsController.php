@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Course;
-use Illuminate\Http\Request;
+use App\Models\Certification;
 use App\Traits\GeneralTrait;
+use Illuminate\Http\Request;
 
-class CourseController extends Controller
+class CerticationsController extends Controller
 {
     use GeneralTrait;
     /**
@@ -18,8 +18,8 @@ class CourseController extends Controller
     public function index()
     {
         //
-        $course = Course::all();
-        return $this -> returnData('courses',$course);
+        $certification = Certification::all();
+        return $this -> returnData('certifications',$certification);
     }
 
     /**
@@ -31,10 +31,10 @@ class CourseController extends Controller
     public function store(Request  $myRequestObject)
 
     {
-        $data=$myRequestObject->all();
-        $course = Course::create($data);
-        $course->save();
-        return $this -> returnSuccessMessage("Course added Successful!");
+        $data=  $myRequestObject->all();
+        $certification = Certification::create($data);
+        $certification->save();
+        return $this -> returnSuccessMessage("Certification added Successful!");
     }
 
     /**
@@ -47,17 +47,17 @@ class CourseController extends Controller
     public function update(Request $request)
     {
         //
-        $course = Course::find($request->id);
+        $certification = Certification::find($request->id);
         if($request->name)
-            $course->name = $request->name;
+            $certification->name = $request->name;
         if($request->password)
-            $course->password = $request->password;
+            $certification->password = $request->password;
         if($request->mobile)
-            $course->mobile = $request->mobile;
+            $certification->mobile = $request->mobile;
         if($request->email)
-            $course->email = $request->email;
-        $course->save();
-        return $this -> returnSuccessMessage("Course updated Successful!");
+            $certification->email = $request->email;
+        $certification->save();
+        return $this -> returnSuccessMessage("Certification updated Successful!");
     }
 
     /**
@@ -69,7 +69,7 @@ class CourseController extends Controller
     public function destroy(Request $request)
     {
         //
-        Course::where('id', $request->id)->delete();
-        return $this -> returnSuccessMessage("Course deleted Successful!");
+        Certification::where('id', $request->id)->delete();
+        return $this -> returnSuccessMessage("Certification deleted Successful!");
     }
 }

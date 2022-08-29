@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
-use App\Models\Course;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreUserRequest;
 use App\Traits\GeneralTrait;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Admin;
 
-class CourseController extends Controller
+class AdminsController extends Controller
 {
     use GeneralTrait;
+
     /**
      * Display a listing of the resource.
      *
@@ -18,8 +20,8 @@ class CourseController extends Controller
     public function index()
     {
         //
-        $course = Course::all();
-        return $this -> returnData('courses',$course);
+        $admin = Admin::all();
+        return $this -> returnData('admins',$admin);
     }
 
     /**
@@ -28,13 +30,13 @@ class CourseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function store(Request  $myRequestObject)
+    public function store(StoreUserRequest  $myRequestObject)
 
     {
         $data=$myRequestObject->all();
-        $course = Course::create($data);
-        $course->save();
-        return $this -> returnSuccessMessage("Course added Successful!");
+        $admin = Admin::create($data);
+        $admin->save();
+        return $this -> returnSuccessMessage("Admin added Successful!");
     }
 
     /**
@@ -47,17 +49,17 @@ class CourseController extends Controller
     public function update(Request $request)
     {
         //
-        $course = Course::find($request->id);
+        $admin = Admin::find($request->id);
         if($request->name)
-            $course->name = $request->name;
+            $admin->name = $request->name;
         if($request->password)
-            $course->password = $request->password;
+            $admin->password = $request->password;
         if($request->mobile)
-            $course->mobile = $request->mobile;
+            $admin->mobile = $request->mobile;
         if($request->email)
-            $course->email = $request->email;
-        $course->save();
-        return $this -> returnSuccessMessage("Course updated Successful!");
+            $admin->email = $request->email;
+        $admin->save();
+        return $this -> returnSuccessMessage("Admin updated Successful!");
     }
 
     /**
@@ -69,7 +71,7 @@ class CourseController extends Controller
     public function destroy(Request $request)
     {
         //
-        Course::where('id', $request->id)->delete();
-        return $this -> returnSuccessMessage("Course deleted Successful!");
+        Admin::where('id', $request->id)->delete();
+        return $this -> returnSuccessMessage("Admin deleted Successful!");
     }
 }
