@@ -1,17 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Resources\CourseResource;
-use App\Models\Course;
+use App\Models\Comment;
 use Illuminate\Http\Request;
-use App\Traits\GeneralTrait;
-use Tymon\JWTAuth\Facades\JWTAuth;
 
-class CourseController extends Controller
+class CommentController extends Controller
 {
-    use GeneralTrait;
     /**
      * Display a listing of the resource.
      *
@@ -19,15 +14,6 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //json file call
-        //return Course::all();     //doesnt have transforamtion layer
-        $courses = Course::all();
-        //return html data
-        //return $this -> returnData('courses',$courses);
-
-//        return JSON
-
-        return response()->json($courses);
         //
     }
 
@@ -55,10 +41,10 @@ class CourseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comment $comment)
     {
         //
     }
@@ -66,10 +52,10 @@ class CourseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comment $comment)
     {
         //
     }
@@ -78,10 +64,10 @@ class CourseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comment $comment)
     {
         //
     }
@@ -89,10 +75,10 @@ class CourseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comment $comment)
     {
         //
     }

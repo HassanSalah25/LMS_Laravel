@@ -24,6 +24,7 @@ use App\Models\Post;
 use App\Models\Staff;
 use App\Models\Student;
 use App\Models\User;
+use App\Models\Comment;
 
 
 
@@ -56,6 +57,7 @@ class DatabaseSeeder extends Seeder
          Student::factory()->times(100)->create();
          User::factory()->times(100)->create();
         CourseStudent::factory()->times(100)->create();
+        Comment::factory()->times(100)->create();
 
         //way 2
          //$this->call(UsersSeeder::class);

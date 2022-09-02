@@ -23,10 +23,13 @@ class Admin extends Model implements JWTSubject
      */
 
 
-     // #accepts ALL records  ##Wrong security implement !!
+     // #accepts ALL records/rows  ##Wrong security implement !!
      protected $guarded =[
+         //null
 
      ];
+
+
       protected $fillable =[
         'name', 'email' , 'password'
 

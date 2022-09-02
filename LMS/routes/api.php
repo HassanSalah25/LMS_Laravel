@@ -22,9 +22,35 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 //        download Snatcum package api tokens new Auth way
 
 //all routes / api here must be api authenticated
+
+//
+//    Route::get(
+//
+//
+//    )
+
+
+Route::get('course', [CourseController::class,'index']) ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Route::group(['middleware' => ['api'], 'namespace' => 'Api'], function () {
 
-
+        // prefix :
     Route::group(['prefix' => 'admin','namespace'=>'Admin'],function (){
         Route::post('login', [AuthController::class,'login']);
         Route::post('logout',[AuthController::class,'logout']) -> middleware(['auth.guard:admin-api']);

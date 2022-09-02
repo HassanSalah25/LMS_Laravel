@@ -26,6 +26,7 @@
                 </thead>
                  <tbody>
 
+                        {{-- count of $Admins == count of rows                 --}}
                     @forelse ($Admins as $Admin)
                     <tr scope="row">
                         <td>

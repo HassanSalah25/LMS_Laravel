@@ -14,9 +14,12 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+        //Note : each model instance/obj consider DB row
+
+
+
         return view('Admin.index', [
-            'Admins' => Admin::all()
+            'Admins' => Admin::all()// select * from
         ]);
     }
 
@@ -87,14 +90,14 @@ class AdminController extends Controller
     {
         //
 
-        $admin = admin::find($id);
+        $admin = admin::find($id);//select * from admins where id==$id
         $admin->name = $request->name;
         $admin->password = $request->password;
         $admin->mobile = $request->mobile;
         $admin->email = $request->email;
         $admin->save();
 
-     //   return redirect('admins/index');
+      return redirect('admins/');
     }
 
     /**
