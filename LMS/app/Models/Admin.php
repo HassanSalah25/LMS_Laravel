@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class Admin extends Model implements JWTSubject
+class Admin extends Authenticatable implements JWTSubject
 {
     use HasFactory;
     protected $table = 'admins';
@@ -31,7 +31,7 @@ class Admin extends Model implements JWTSubject
 
 
       protected $fillable =[
-        'name', 'email' , 'password'
+        'name', 'email' , 'password','mobile'
 
      ];
 
