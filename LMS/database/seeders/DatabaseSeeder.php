@@ -46,16 +46,16 @@ class DatabaseSeeder extends Seeder
          Batch::factory()->times(5)->create();
          Category::factory()->times(5)->create();
          Certification::factory()->times(5)->create();
-         CourseCategory::factory()->times(100)->create();
-         Course::factory()->times(100)->create();
-         Enroll::factory()->times(100)->create();
-         Feedback::factory()->times(100)->create();
-         Lesson::factory()->times(100)->create();
-         Module::factory()->times(100)->create();
-         Staff::factory()->times(100)->create();
-         Student::factory()->times(100)->create();
-         User::factory()->times(100)->create();
-        CourseStudent::factory()->times(100)->create();
+         CourseCategory::factory()->times(5)->create();
+         Course::factory()->times(5)->create();
+         Enroll::factory()->times(5)->create();
+         Feedback::factory()->times(5)->create();
+         Lesson::factory()->times(5)->create();
+         Module::factory()->times(5)->create();
+         Staff::factory()->times(5)->create();
+         Student::factory()->times(5)->create();
+         User::factory()->times(5)->create();
+        CourseStudent::factory()->times(5)->create();
 
         //way 2
          //$this->call(UsersSeeder::class);

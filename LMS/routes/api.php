@@ -32,7 +32,9 @@ Route::group(['middleware' => ['api'], 'namespace' => 'Api'], function () {
     Route::group(['prefix' => 'admin','namespace'=>'Admin'],function (){
 
         Route::post('login', [AuthController::class,'login']);
+        Route::post('logout',[AuthController::class,'logout']) -> middleware(['auth.guard:admin-api']);
 
+        
         Route::group(['prefix' => 'admin'],function (){
 
             Route::post('show', [AdminsController::class,'index']);
@@ -114,7 +116,8 @@ Route::group(['middleware' => ['api'], 'namespace' => 'Api'], function () {
             Route::post('destroy', [UsersController::class,'destroy']);
         });
     });
-
+    // AssignGauard == auth.guard
+    // admin-api as parameter to Assign Gaurd
     Route::post('logout',[AuthController::class,'logout']) -> middleware(['auth.guard:admin-api']);
 
     Route::group(['prefix' => 'user','namespace'=>'User'],function (){
