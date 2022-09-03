@@ -26,7 +26,8 @@ class AuthController extends Controller
             ];
 
             $validator = Validator::make($request->all(), $rules);
-
+            
+            //error validation message
             if ($validator->fails()) {
                 $code = $this->returnCodeAccordingToInput($validator);
                 return $this->returnValidationError($code, $validator);
@@ -52,7 +53,9 @@ class AuthController extends Controller
 
 
     }
-
+    //Expiry Date for API-Toke
+    //Add remmember Token
+    //Add Captcha against rate limit
     public function logout(Request $request)
     {
         $token = $request -> header('auth-token');

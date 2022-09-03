@@ -34,10 +34,10 @@ Route::group(['middleware' => ['api'], 'namespace' => 'Api'], function () {
         Route::post('login', [AuthController::class,'login']);
         Route::post('logout',[AuthController::class,'logout']) -> middleware(['auth.guard:admin-api']);
 
-        
+
         Route::group(['prefix' => 'admin'],function (){
 
-            Route::post('show', [AdminsController::class,'index']);
+            Route::post('show', [AdminsController::class,'index'])-> middleware(['auth.guard:admin-api']);
             Route::post('store', [AdminsController::class,'store']);
             Route::post('update', [AdminsController::class,'update']);
             Route::post('destroy', [AdminsController::class,'destroy']);
