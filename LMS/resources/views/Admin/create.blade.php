@@ -21,7 +21,7 @@
                 <i class="fa fa-coffee"></i>
                 This is an <strong>.alert</strong>. Use this to show important messages to the user.
             </div>
-            <h3>Personal info</h3>
+            <h3>Personal information</h3>
 
             <form class="yourform" action="store" method="post" autocomplete="off">
                 @csrf
