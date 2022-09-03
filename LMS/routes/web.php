@@ -31,7 +31,7 @@ Route::get('/market', function () {
 
 });
 
-Route::get('/contact-us', function () {
+Route::get('/contact-us',[\App\Http\Controllers\FeedbackController::c], function () {
     return view('Pages/ContactUs');
 
 

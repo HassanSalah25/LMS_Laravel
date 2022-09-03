@@ -55,4 +55,11 @@ class Admin extends Authenticatable implements JWTSubject
         // TODO: Implement getJWTCustomClaims() method.
         return [];
     }
+
+
+    //add logout
+    public function markedForLogout(){
+        User::where('id', $userId)->update(['logout' => true]);
+    }
+
 }

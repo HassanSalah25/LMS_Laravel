@@ -16,10 +16,10 @@ class CreateFeedbackTable extends Migration
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-			$table->integer('course_id')->unsigned();
-			$table->integer('batch_id')->unsigned();
-			$table->integer('staff_id')->unsigned();
-			$table->integer('student_id')->unsigned();
+			$table->integer('course_id')->nullable()->unsigned();
+			$table->integer('batch_id')->nullable()->unsigned();
+			$table->integer('staff_id')->nullable()->unsigned();
+			$table->integer('student_id')->nullable()->unsigned();
 			$table->string('title')->nullable();
 			$table->string('rating')->nullable();
 			$table->string('review')->nullable();

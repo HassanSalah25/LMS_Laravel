@@ -21,7 +21,8 @@ class CreateAdminsTable extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->string('mobile');
-			// $table->string('password');
+            $table->boolean('logout')->default(false);
+            // $table->string('password');
 			// $table->integer('role_id');
 			// $table->tinyInteger('is_active')->default('1');
 			// $table->softDeletes();

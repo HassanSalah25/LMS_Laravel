@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Requests\StoreUserRequest;
+use App\Models\User;
 use App\Traits\GeneralTrait;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -74,4 +75,11 @@ class AdminsController extends Controller
         Admin::where('id', $request->id)->delete();
         return $this -> returnSuccessMessage("Admin deleted Successful!");
     }
+
+    //add logout
+    public function markedForLogout(){
+        User::where('id', $userId)->update(['logout' => true]);
+    }
+
+
 }
