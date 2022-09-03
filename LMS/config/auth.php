@@ -40,6 +40,7 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+                /// change to JWT driver
         'api' => [
             'driver' => 'jwt',
             'provider' => 'users',
@@ -73,6 +74,7 @@ return [
     |
     */
 
+        //FOR the APIS
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
@@ -80,7 +82,7 @@ return [
         ],
         'admins' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Admin::class,
+            'model' => App\Models\User::class,
         ],
 
 

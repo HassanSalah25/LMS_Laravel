@@ -35,169 +35,90 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 //    )
 
 
-Route::get('course', [CourseController::class,'index']) ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  //////   /api/.....
+//basic api request with no JWT or Auth middleware!
+
+//Route::get('course', [CourseController::class,'index']) ;
 
 
 
+//middlware is just a rule not a uri paramter
+        //namespace is the calling name
+Route::group(
+    ['middleware' => ['api','checkPassword'],//add other middlewares
+    'namespace' => 'Api'],
+                            function () {
+                                //prefix is the route name
+                                Route::group([
+                                    'prefix' => 'admin',
+                                    'namespace' => 'Admin'],
+                                    function () {
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  //////   /api/admin/.....
+                                        Route::post('login', [AuthController::class, 'login']);
+                                        // AssignGauard == auth.guard
+                                        // admin-api as parameter to Assign Gaurd
+                                        Route::post('logout', [AuthController::class, 'logout'])->middleware(['auth.guard:admin-api']);
+                                        Route::group(['prefix' => 'course'], function () {
 
+                                            Route::post('show', [CourseController::class, 'index'])->middleware('auth.guard:admin-api');
 
+                                        });
 
+                                            //Extends
+                                        Route::group(
+                                                ['prefix' => 'user',
+                                                    'namespace' => 'User',
+                                            //  'middleware' => ['auth.guard:admin-api'],
+                                                ], function () {
+                                            ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  //////   /api/admin/user/.....
 
+                                            //Route::post('login','App\Http\Controllers\API\User\AuthController@login');
 
+                                            Route::group(['prefix' => 'course'], function () {
 
+                                                Route::post('show', [CourseController::class, 'index']);
 
+                                            });
 
+                                            Route::group(['prefix' => 'batch'], function () {
+                                                Route::post('show', [BatchsController::class, 'index']);
+                                            });
 
+                                            Route::group(['prefix' => 'category'], function () {
+                                                Route::post('show', [CategoriesController::class, 'index']);
+                                            });
 
+                                            Route::group(['prefix' => 'certification'], function () {
+                                                Route::post('show', [CerticationsController::class, 'index']);
+                                            });
 
+                                            Route::group(['prefix' => 'feedback'], function () {
+                                                Route::post('show', [FeedbacksController::class, 'index']);
+                                            });
 
+                                            Route::group(['prefix' => 'lesson'], function () {
+                                                Route::post('show', [LessonsController::class, 'index']);
+                                            });
 
+                                            Route::group(['prefix' => 'module'], function () {
+                                                Route::post('show', [ModulesController::class, 'index']);
+                                            });
 
-Route::group(['middleware' => ['api'], 'namespace' => 'Api'], function () {
+                                            Route::group(['prefix' => 'staff'], function () {
+                                                Route::post('show', [StaffsController::class, 'index']);
+                                            });
 
-<<<<<<< HEAD
-        // prefix :
-=======
->>>>>>> 5e98bb4b8cce70373bf1c6ad2593b4e57a4259a0
-    Route::group(['prefix' => 'admin','namespace'=>'Admin'],function (){
+                                            Route::group(['prefix' => 'student'], function () {
+                                                Route::post('show', [StudentsController::class, 'index']);
+                                            });
 
-        Route::post('login', [AuthController::class,'login']);
-        Route::post('logout',[AuthController::class,'logout']) -> middleware(['auth.guard:admin-api']);
+                                            Route::group(['prefix' => 'user'], function () {
+                                                Route::post('show', [UsersController::class, 'index']);
+                                            });
 
-        
-        Route::group(['prefix' => 'admin'],function (){
-
-            Route::post('show', [AdminsController::class,'index']);
-            Route::post('store', [AdminsController::class,'store']);
-            Route::post('update', [AdminsController::class,'update']);
-            Route::post('destroy', [AdminsController::class,'destroy']);
-
-        });
-
-        Route::group(['prefix' => 'course'],function (){
-
-            Route::post('show', [CourseController::class,'index']);
-            Route::post('store', [CourseController::class,'store']);
-            Route::post('update', [CourseController::class,'update']);
-            Route::post('destroy', [CourseController::class,'destroy']);
-
-        });
-
-        Route::group(['prefix' => 'batch'],function (){
-            Route::post('show', [BatchsController::class,'index']);
-            Route::post('store', [BatchsController::class,'store']);
-            Route::post('update', [BatchsController::class,'update']);
-            Route::post('destroy', [BatchsController::class,'destroy']);
-        });
-
-        Route::group(['prefix' => 'category'],function (){
-            Route::post('show', [CategoriesController::class,'index']);
-            Route::post('store', [CategoriesController::class,'store']);
-            Route::post('update', [CategoriesController::class,'update']);
-            Route::post('destroy', [CategoriesController::class,'destroy']);
-        });
-
-        Route::group(['prefix' => 'certification'],function (){
-            Route::post('show', [CerticationsController::class,'index']);
-            Route::post('store', [CerticationsController::class,'store']);
-            Route::post('update', [CerticationsController::class,'update']);
-            Route::post('destroy', [CerticationsController::class,'destroy']);
-        });
-
-        Route::group(['prefix' => 'feedback'],function (){
-            Route::post('show', [FeedbacksController::class,'index']);
-            Route::post('store', [FeedbacksController::class,'store']);
-            Route::post('update', [FeedbacksController::class,'update']);
-            Route::post('destroy', [FeedbacksController::class,'destroy']);
-        });
-
-        Route::group(['prefix' => 'lesson'],function (){
-            Route::post('show', [LessonsController::class,'index']);
-            Route::post('store', [LessonsController::class,'store']);
-            Route::post('update', [LessonsController::class,'update']);
-            Route::post('destroy', [LessonsController::class,'destroy']);
-        });
-
-        Route::group(['prefix' => 'module'],function (){
-            Route::post('show', [ModulesController::class,'index']);
-            Route::post('store', [ModulesController::class,'store']);
-            Route::post('update', [ModulesController::class,'update']);
-            Route::post('destroy', [ModulesController::class,'destroy']);
-        });
-
-        Route::group(['prefix' => 'staff'],function (){
-            Route::post('show', [StaffsController::class,'index']);
-            Route::post('store', [StaffsController::class,'store']);
-            Route::post('update', [StaffsController::class,'update']);
-            Route::post('destroy', [StaffsController::class,'destroy']);
-        });
-
-        Route::group(['prefix' => 'student'],function (){
-            Route::post('show', [StudentsController::class,'index']);
-            Route::post('store', [StudentsController::class,'store']);
-            Route::post('update', [StudentsController::class,'update']);
-            Route::post('destroy', [StudentsController::class,'destroy']);
-        });
-
-        Route::group(['prefix' => 'user'],function (){
-            Route::post('show', [UsersController::class,'index']);
-            Route::post('store', [UsersController::class,'store']);
-            Route::post('update', [UsersController::class,'update']);
-            Route::post('destroy', [UsersController::class,'destroy']);
-        });
-    });
-    // AssignGauard == auth.guard
-    // admin-api as parameter to Assign Gaurd
-    Route::post('logout',[AuthController::class,'logout']) -> middleware(['auth.guard:admin-api']);
-
-    Route::group(['prefix' => 'user','namespace'=>'User'],function (){
-
-        Route::post('login','App\Http\Controllers\API\User\AuthController@login');
-
-        Route::group(['prefix' => 'course'],function (){
-
-            Route::post('show', [CourseController::class,'index']);
-
-        });
-
-        Route::group(['prefix' => 'batch'],function (){
-            Route::post('show', [BatchsController::class,'index']);
-        });
-
-        Route::group(['prefix' => 'category'],function (){
-            Route::post('show', [CategoriesController::class,'index']);
-        });
-
-        Route::group(['prefix' => 'certification'],function (){
-            Route::post('show', [CerticationsController::class,'index']);
-        });
-
-        Route::group(['prefix' => 'feedback'],function (){
-            Route::post('show', [FeedbacksController::class,'index']);
-        });
-
-        Route::group(['prefix' => 'lesson'],function (){
-            Route::post('show', [LessonsController::class,'index']);
-        });
-
-        Route::group(['prefix' => 'module'],function (){
-            Route::post('show', [ModulesController::class,'index']);
-        });
-
-        Route::group(['prefix' => 'staff'],function (){
-            Route::post('show', [StaffsController::class,'index']);
-        });
-
-        Route::group(['prefix' => 'student'],function (){
-            Route::post('show', [StudentsController::class,'index']);
-        });
-
-        Route::group(['prefix' => 'user'],function (){
-            Route::post('show', [UsersController::class,'index']);
-        });
-
-        Route::post('logout','App\Http\Controllers\API\User\AuthController@logout') -> middleware(['auth.guard:user-api']);
-    });
-});
+                                        })//->middleware(['auth.guard:admin-api'])
+                                        ;
+                                    });
+                            });
 
 

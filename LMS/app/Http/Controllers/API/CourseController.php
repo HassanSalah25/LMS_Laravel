@@ -17,7 +17,6 @@ class CourseController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
         //json file call
         //return Course::all();     //doesnt have transforamtion layer
         $courses = Course::all();
@@ -37,8 +36,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-=======
->>>>>>> 5e98bb4b8cce70373bf1c6ad2593b4e57a4259a0
+
         //
         $course = Course::all();
         return $this -> returnData('courses',$course);

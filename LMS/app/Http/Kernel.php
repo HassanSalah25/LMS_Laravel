@@ -54,7 +54,7 @@ class  Kernel extends HttpKernel
      *
      * @var array<string, class-string|string>
      */
-    //alias
+    //alias for middlewares
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
@@ -66,5 +66,7 @@ class  Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'auth.guard' => AssignGuard::class,
+        'checkPassword' => \App\Http\Middleware\CheckPassword::class,
+
     ];
 }
