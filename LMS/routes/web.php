@@ -76,9 +76,9 @@ Route::get('/dashboard', function () {
 
 
 // admin CRUD
-Route::middleware('auth')->group(function (){   //closure functionRoute::get('/admins', [UsersController::class, 'index'])->name('Admins')
-    Route::get('/admins', [AdminController::class, 'index'])->name('Admins');
-    Route::get('/admins/create', [AdminController::class, 'create'])->name('Admins.create');
+ Route::middleware('auth')->group(function (){   //closure functionRoute::get('/admins', [UserController::class, 'index'])->name('Admins')
+       Route::get('/admins', [AdminController::class, 'index'])->name('Admins');
+     Route::get('/admins/create', [AdminController::class, 'create'])->name('Admins.create');
     Route::get('/admins/edit/{admin}', [AdminController::class, 'edit'])->name('Admins.edit');
     Route::post('/admins/update/{id}', [AdminController::class, 'update'])->name('Admins.update');
     Route::post('/admins/destroy/{id}', [AdminController::class, 'destroy'])->name('Admins.destroy');

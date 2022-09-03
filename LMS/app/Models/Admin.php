@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Tymon\JWTAuth\Contracts\JWTSubject;
+use Tymon\JWTAuth\Contracts\JWTSubject;//Needed : for the JWT
 
 class Admin extends Authenticatable implements JWTSubject
 {
@@ -23,10 +23,13 @@ class Admin extends Authenticatable implements JWTSubject
      */
 
 
-     // #accepts ALL records  ##Wrong security implement !!
+     // #accepts ALL records/rows  ##Wrong security implement !!
      protected $guarded =[
+         //null
 
      ];
+
+
       protected $fillable =[
         'name', 'email' , 'password','mobile'
 

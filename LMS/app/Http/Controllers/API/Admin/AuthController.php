@@ -14,6 +14,9 @@ class AuthController extends Controller
 {
 
     use GeneralTrait;
+        //JWT json web tokens
+
+
 
     public function login(Request $request)
     {
@@ -26,8 +29,12 @@ class AuthController extends Controller
             ];
 
             $validator = Validator::make($request->all(), $rules);
+<<<<<<< HEAD
             
             //error validation message
+=======
+////////////////////////////
+>>>>>>> origin/main
             if ($validator->fails()) {
                 $code = $this->returnCodeAccordingToInput($validator);
                 return $this->returnValidationError($code, $validator);
@@ -46,6 +53,7 @@ class AuthController extends Controller
             $admin->api_token = $token;
             //return token
             return $this->returnData('admin', $admin);
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
         } catch (\Exception $ex) {
             return $this->returnError($ex->getCode(), $ex->getMessage());

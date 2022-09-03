@@ -101,6 +101,7 @@ return [
     |
     */
 
+    //expire tokens.. default 60mint
     'ttl' => env('JWT_TTL', 60),
 
     /*

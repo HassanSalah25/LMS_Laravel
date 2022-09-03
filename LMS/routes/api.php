@@ -27,8 +27,8 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 */
 
 //all routes / api here must be api authenticated
-Route::group(['middleware' => ['api'], 'namespace' => 'Api'], function () {
 
+<<<<<<< HEAD
     Route::group(['prefix' => 'admin','namespace'=>'Admin'],function (){
 
         Route::post('login', [AuthController::class,'login']);
@@ -169,5 +169,99 @@ Route::group(['middleware' => ['api'], 'namespace' => 'Api'], function () {
         Route::post('logout','App\Http\Controllers\API\User\AuthController@logout') -> middleware(['auth.guard:user-api']);
     });
 });
+=======
+//
+//    Route::get(
+//
+//
+//    )
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  //////   /api/.....
+//basic api request with no JWT or Auth middleware!
+
+//Route::get('course', [CourseController::class,'index']) ;
+
+
+
+//middlware is just a rule not a uri paramter
+        //namespace is the calling name
+Route::group(
+    ['middleware' => ['api','checkPassword'],//add other middlewares
+    'namespace' => 'Api'],
+                            function () {
+                                //prefix is the route name
+                                Route::group([
+                                    'prefix' => 'admin',
+                                    'namespace' => 'Admin'],
+                                    function () {
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  //////   /api/admin/.....
+                                        Route::post('login', [AuthController::class, 'login']);
+                                        // AssignGauard == auth.guard
+                                        // admin-api as parameter to Assign Gaurd
+                                        Route::post('logout', [AuthController::class, 'logout'])->middleware(['auth.guard:admin-api']);
+                                        Route::group(['prefix' => 'course'], function () {
+
+                                            Route::post('show', [CourseController::class, 'index'])->middleware('auth.guard:admin-api');
+
+                                        });
+
+                                            //Extends
+                                        Route::group(
+                                                ['prefix' => 'user',
+                                                    'namespace' => 'User',
+                                            //  'middleware' => ['auth.guard:admin-api'],
+                                                ], function () {
+                                            ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  //////   /api/admin/user/.....
+
+                                            //Route::post('login','App\Http\Controllers\API\User\AuthController@login');
+
+                                            Route::group(['prefix' => 'course'], function () {
+
+                                                Route::post('show', [CourseController::class, 'index']);
+
+                                            });
+
+                                            Route::group(['prefix' => 'batch'], function () {
+                                                Route::post('show', [BatchsController::class, 'index']);
+                                            });
+
+                                            Route::group(['prefix' => 'category'], function () {
+                                                Route::post('show', [CategoriesController::class, 'index']);
+                                            });
+
+                                            Route::group(['prefix' => 'certification'], function () {
+                                                Route::post('show', [CerticationsController::class, 'index']);
+                                            });
+
+                                            Route::group(['prefix' => 'feedback'], function () {
+                                                Route::post('show', [FeedbacksController::class, 'index']);
+                                            });
+
+                                            Route::group(['prefix' => 'lesson'], function () {
+                                                Route::post('show', [LessonsController::class, 'index']);
+                                            });
+
+                                            Route::group(['prefix' => 'module'], function () {
+                                                Route::post('show', [ModulesController::class, 'index']);
+                                            });
+
+                                            Route::group(['prefix' => 'staff'], function () {
+                                                Route::post('show', [StaffsController::class, 'index']);
+                                            });
+
+                                            Route::group(['prefix' => 'student'], function () {
+                                                Route::post('show', [StudentsController::class, 'index']);
+                                            });
+
+                                            Route::group(['prefix' => 'user'], function () {
+                                                Route::post('show', [UsersController::class, 'index']);
+                                            });
+
+                                        })//->middleware(['auth.guard:admin-api'])
+                                        ;
+                                    });
+                            });
+>>>>>>> origin/main
 
 

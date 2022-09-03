@@ -36,7 +36,7 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->configureRateLimiting();
-
+                //the main Routes file... inidicates /api in the url to call API.php
         $this->routes(function () {
             Route::prefix('api')
                 ->middleware('api')
@@ -56,6 +56,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function configureRateLimiting()
     {
+            //Rate Limit #
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
         });

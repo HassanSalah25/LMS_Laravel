@@ -17,6 +17,26 @@ class CourseController extends Controller
      */
     public function index()
     {
+        //json file call
+        //return Course::all();     //doesnt have transforamtion layer
+        $courses = Course::all();
+        //return html data
+        //return $this -> returnData('courses',$courses);
+
+//        return JSON
+
+        return response()->json($courses);
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+
         //
         $course = Course::all();
         return $this -> returnData('courses',$course);
