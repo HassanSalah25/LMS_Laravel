@@ -76,10 +76,10 @@ class AdminsController extends Controller
         return $this -> returnSuccessMessage("Admin deleted Successful!");
     }
 
-    //add logout
-    public function markedForLogout(){
-        User::where('id', $userId)->update(['logout' => true]);
-    }
+//    //add logout
+//    public function markedForLogout(){
+//        User::where('id', $userId)->update(['logout' => true]);
+//    }
 
 
 }

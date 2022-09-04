@@ -12,20 +12,21 @@
                 <h2 class="form-title">Contact us</h2>
                 <p class="justify text-muted">Have an enquiry or would like to give us feedback?<br>Fill out the form below to contact our team.</p>
 
-                <form>
+                <form method="POST" action="store">
+                    @csrf
                     <div class="form-group pt-2 pl-1">
                         <label for="exampleInputName">Your name</label>
-                        <input type="text" class="form-control" id="exampleInputName">
+                        <input type="text" class="form-control" id="exampleInputName" name="title">
                     </div>
 
                     <div class="form-group pl-1">
                         <label for="exampleInputEmail1">Your email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1">
+                        <input type="email" class="form-control" id="exampleInputEmail1" name="rating">
                     </div>
 
                     <div class="form-group pl-1">
                         <label for="exampleFormControlTextarea1">Your message</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="review" ></textarea>
 
                     </div>
                     <div class="row">

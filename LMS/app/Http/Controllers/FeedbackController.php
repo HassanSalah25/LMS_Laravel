@@ -2,61 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Feedback;
 use Illuminate\Http\Request;
 
 class FeedbackController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return view('Pages/ContactUs');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return array
      */
-    public function store(Request $request)
-    {
-        //
-    }
+    public function store(Request  $myRequestObject)
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        $data=$myRequestObject->all();
+        $feedback = Feedback::create($data);
+        $feedback->save();
+        return "Feedback added Successful!";
     }
 
     /**
@@ -64,21 +33,34 @@ class FeedbackController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return array
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         //
+        $feedback = Feedback::find($request->id);
+        if($request->name)
+            $feedback->name = $request->name;
+        if($request->password)
+            $feedback->password = $request->password;
+        if($request->mobile)
+            $feedback->mobile = $request->mobile;
+        if($request->email)
+            $feedback->email = $request->email;
+        $feedback->save();
+        return $this -> returnSuccessMessage("Feedback updated Successful!");
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return array
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
         //
+        Feedback::where('id', $request->id)->delete();
+        return $this -> returnSuccessMessage("Feedback deleted Successful!");
     }
 }

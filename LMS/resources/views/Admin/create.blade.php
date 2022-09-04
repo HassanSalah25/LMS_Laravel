@@ -27,7 +27,7 @@
                 @csrf
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Name:</label>
-                    <div class="col-lg-8">
+                    <div class="col-lg-8">                            <!-- retrive the old value from the model table  -->
                         <input class="form-control" type="text" placeholder="Admin Name" name="name" value="{{ old('name') }}">
                     </div>
                 </div>
