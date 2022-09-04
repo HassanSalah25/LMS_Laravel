@@ -46,12 +46,12 @@ class AdminController extends Controller
         $data=$myRequestObject->all();
         $admin = Admin::create($data);
         $admin->save();
-//        Admin::create($data->validate([
-//            'name'=> 'required',
-//            'password'=> 'required',
-//            'mobile'=> 'required',
-//            'email' => 'required|unique:admins'
-//        ]));
+        Admin::create($data->validate([
+            'name'=> 'required',
+            'password'=> 'required',
+            'mobile'=> 'required',
+            'email' => 'required|unique:admins'
+        ]));
         return redirect('/admins/');
     }
 
@@ -63,7 +63,7 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //get by id
+//        return $id; //returns the fetched posts
     }
 
     /**
@@ -96,7 +96,14 @@ class AdminController extends Controller
         $admin->password = $request->password;
         $admin->mobile = $request->mobile;
         $admin->email = $request->email;
-        $admin->save();
+
+        $admin->save($request->validate([
+            'name'=> 'required',
+            'password'=> 'required',
+            'mobile'=> 'required',
+            'email' => 'required|unique:admins'
+        ]));
+
 
       return redirect('admins/');
     }

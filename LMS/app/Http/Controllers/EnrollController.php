@@ -9,7 +9,7 @@ class EnrollController extends Controller
     //
     public function index()
   {
-    
+
   }
 
   /**
@@ -19,7 +19,8 @@ class EnrollController extends Controller
    */
   public function create()
   {
-    
+   //std id
+      //course id
   }
 
   /**
@@ -29,7 +30,7 @@ class EnrollController extends Controller
    */
   public function store()
   {
-    
+
   }
 
   /**
@@ -40,7 +41,7 @@ class EnrollController extends Controller
    */
   public function show($id)
   {
-    
+
   }
 
   /**
@@ -51,7 +52,7 @@ class EnrollController extends Controller
    */
   public function edit($id)
   {
-    
+
   }
 
   /**
@@ -62,7 +63,7 @@ class EnrollController extends Controller
    */
   public function update($id)
   {
-    
+
   }
 
   /**
@@ -73,6 +74,6 @@ class EnrollController extends Controller
    */
   public function destroy($id)
   {
-    
+
   }
 }

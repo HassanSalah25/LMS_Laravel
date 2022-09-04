@@ -48,7 +48,7 @@
                     <div class="profile-content">
                         <!-- begin tab-content -->
                         <div class="tab-content p-0">
-                            <!-- begin #profile-post tab -->
+                            <!-- begin #profile-posts tab -->
                             <div class="tab-pane fade active show" id="profile-post">
                                 <!-- begin timeline -->
                                 <ul class="timeline">
@@ -231,7 +231,7 @@
                                 </ul>
                                 <!-- end timeline -->
                             </div>
-                            <!-- end #profile-post tab -->
+                            <!-- end #profile-posts tab -->
                         </div>
                         <!-- end tab-content -->
                     </div>

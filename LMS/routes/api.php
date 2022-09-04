@@ -67,7 +67,7 @@ Route::group(
                                                 ], function () {
                                             ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  //////   /api/admin/user/.....
 
-                                            //Route::post('login','App\Http\Controllers\API\User\AuthController@login');
+                                            //Route::posts('login','App\Http\Controllers\API\User\AuthController@login');
 
                                             Route::group(['prefix' => 'course'], function () {
 

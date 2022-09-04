@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Batch;
+use App\Models\Course;
+use App\Models\Staff;
 use Illuminate\Http\Request;
 use App\Models\Feedback;
 use Auth;
@@ -22,17 +25,24 @@ class FeedbackController extends Controller
     public function store(Request  $myRequestObject)
 
     {
-        $user_id = Auth::user()->id;
+        $user_id = Auth::user()->id ;
+        $batch = Batch::find($user_id);
+//        dd($batch->id );
 
-//dd(        $user_id );
+                $data_id = $user_id .Batch::find($user_id)->id  . Course::find($user_id)->id . Staff::find($user_id)->id;
+
+//dd(        $data_id
+//
+//);
+
 
 //        $data=$myRequestObject->all();
         $data =[
             //Hint:we cant
-            "course_id" => $user_id,
-            "batch_id" => $user_id,
-            "staff_id" => $user_id,
-            "student_id" => $user_id,
+            "course_id" => $data_id[2],
+            "batch_id" => $data_id[1] ,
+            "staff_id" => $data_id[3],
+            "student_id" => $data_id[0],
 
         ] ;
         $data=array_merge( $data,$myRequestObject->all());

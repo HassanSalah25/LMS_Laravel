@@ -134,9 +134,9 @@
                 <a class="nav-link" href="/contact-us/">Contact-US  <span class="sr-only">(current)</span></a>
             </li>
 
-            <li class="nav-item active">
-                <a class="nav-link" href="/user/">Profile  <span class="sr-only">(current)</span></a>
-            </li>
+{{--            <li class="nav-item active">--}}
+{{--                <a class="nav-link" href="/user/">Profile  <span class="sr-only">(current)</span></a>--}}
+{{--            </li>--}}
 
             <li class="nav-item active">
                 <a class="nav-link" href="/market/">Market  <span class="sr-only">(current)</span></a>
@@ -145,10 +145,10 @@
                 <a class="nav-link" href="/order/">Order  <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/posts/">POSTS  <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{route('posts.list')}}">POSTS  <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/main/">Dashboard  <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/dashboard/index">Dashboard  <span class="sr-only">(current)</span></a>
             </li>
 
 

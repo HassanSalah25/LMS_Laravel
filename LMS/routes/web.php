@@ -6,6 +6,29 @@ use App\Http\Controllers\AdminController;
  use App\Http\Controllers\StudentController;
  use App\Http\Controllers\CoursesController;
  use App\Http\Controllers\StaffController;
+use App\Http\Controllers\PostController;
+
+
+
+Route::group(
+    ['middleware' => ['auth'],//add other middlewares
+    'namespace' => 'posts',
+    'prefix' => 'posts-list'],
+    function () {
+//add prefix
+//posts route
+Route::get('/', [PostController::class, 'postList'])->name('posts.list');
+Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
+Route::get('/create',[PostController::class,'create'])->name('posts.index'); //shows create post form
+Route::post('/create/post', [PostController::class, 'store'])->name('posts.add'); //saves the created post to the databse
+Route::get('/edit/{id}', [PostController::class, 'edit'])->name('posts.edit'); //shows edit post form
+Route::post('/edit/{id}', [PostController::class, 'update']); //commits edited post to the database
+Route::post('/delete/{id}', [PostController::class, 'destroy'])->name('posts.delete'); //deletes post from the database
+///////////////////////////////////////////////////////////////////
+Route::post('/like-posts/{id}', [PostController::class, 'likePost'])->name('like.posts');
+Route::post('/unlike-posts/{id}', [PostController::class, 'unlikePost'])->name('unlike.posts');
+
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,16 +37,47 @@ Route::get('/', function () {
     // return  ' HOlaa ! <h2> <a href="/dashboard"> </h2>';
 
 });
-Route::get('/main', function () {
-    return view('Pages/dashboard');
 
 
-});
-Route::get('/user', function () {
-    return view('Pages/UserProfile');
+
+///////////////////////DASHboard
+    Route::group(
+        ['middleware' => ['auth'],//add other middlewares
+            'namespace' => 'dashboard',
+            'prefix' => 'dashboard'],
+        function () {
+//add prefix
+//posts route
+            Route::get('/index', function (){
+                return view("/dashboard/index");
+            });
+            Route::get('/index2', function (){
+                return view("/dashboard/index2");
+            });
+            Route::get('/index3', function (){
+                return view("/dashboard/index3");
+            });
+//            Route::get('/index1', [PostController::class, 'show'])->name('posts.show');
+//            Route::get('/create',[PostController::class,'create'])->name('posts.index'); //shows create post form
+//            Route::post('/create/post', [PostController::class, 'store'])->name('posts.add'); //saves the created post to the databse
+//            Route::get('/edit/{id}', [PostController::class, 'edit'])->name('posts.edit'); //shows edit post form
+//            Route::post('/edit/{id}', [PostController::class, 'update']); //commits edited post to the database
+//            Route::post('/delete/{id}', [PostController::class, 'destroy'])->name('posts.delete'); //deletes post from the database
+/////////////////////////////////////////////////////////////////////
+//            Route::post('/like-posts/{id}', [PostController::class, 'likePost'])->name('like.posts');
+//            Route::post('/unlike-posts/{id}', [PostController::class, 'unlikePost'])->name('unlike.posts');
+
+        });
 
 
-});
+
+//Route::middleware('auth')->group(function () {
+//
+//    Route::get('/user',[]
+////        return view('Pages/UserProfile');
+//
+//
+//});
 
 Route::get('/market', function () {
     return view('Pages/market');
@@ -80,20 +134,23 @@ Route::get('/dashboard', function () {
 //    Route::get('/admins', [UsersController::class, 'index'])->name('Admins')->middleware('auth');
 //    Route::get('/admins/create', [UsersController::class, 'create'])->name('Admins.create')->middleware('auth');
 //    Route::get('/admins/edit/{admin}', [UsersController::class, 'edit'])->name('Admins.edit')->middleware('auth');
-//    Route::post('/admins/update/{id}', [UsersController::class, 'update'])->name('Admins.update')->middleware('auth');
-//    Route::post('/admins/destroy/{id}', [UsersController::class, 'destroy'])->name('Admins.destroy')->middleware('auth');
-//    Route::post('/admins/create', [UsersController::class, 'store'])->name('Admins.store')->middleware('auth');
+//    Route::posts('/admins/update/{id}', [UsersController::class, 'update'])->name('Admins.update')->middleware('auth');
+//    Route::posts('/admins/destroy/{id}', [UsersController::class, 'destroy'])->name('Admins.destroy')->middleware('auth');
+//    Route::posts('/admins/create', [UsersController::class, 'store'])->name('Admins.store')->middleware('auth');
 
 
 
 // admin CRUD
  Route::middleware('auth')->group(function (){   //closure functionRoute::get('/admins', [UserController::class, 'index'])->name('Admins')
        Route::get('/admins', [AdminController::class, 'index'])->name('Admins');
-     Route::get('/admins/create', [AdminController::class, 'create'])->name('Admins.create');
-    Route::get('/admins/edit/{admin}', [AdminController::class, 'edit'])->name('Admins.edit');
-    Route::post('/admins/update/{id}', [AdminController::class, 'update'])->name('Admins.update');
-    Route::post('/admins/destroy/{id}', [AdminController::class, 'destroy'])->name('Admins.destroy');
-    Route::post('/admins/store', [AdminController::class, 'store'])->name('Admins.store');
+       Route::get('/admins/create', [AdminController::class, 'create'])->name('Admins.create');
+       Route::get('/admins/edit/{admin}', [AdminController::class, 'edit'])->name('Admins.edit');
+       Route::post('/admins/update/{id}', [AdminController::class, 'update'])->name('Admins.update');
+       Route::post('/admins/destroy/{id}', [AdminController::class, 'destroy'])->name('Admins.destroy');
+        Route::post('/admins/store', [AdminController::class, 'store'])->name('Admins.store');
+        //SHOW ADMIN PROFILE
+//         Route::get('/user',[AdminController::class,'edit'])->name('Admin.edit');
+//        return view('Pages/UserProfile');
 
 });
 
