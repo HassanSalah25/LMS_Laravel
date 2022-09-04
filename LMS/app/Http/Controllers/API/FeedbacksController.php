@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\Feedback;
+use Illuminate\Auth;
 use App\Traits\GeneralTrait;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,7 @@ class FeedbacksController extends Controller
     public function index()
     {
         //
-        $feedback = Feedback::all();
+         $feedback = Feedback::all();
         return $this -> returnData('feedbacks',$feedback);
     }
 
@@ -30,6 +31,7 @@ class FeedbacksController extends Controller
     public function store(Request  $myRequestObject)
 
     {
+//        dd($myRequestObject);
         $data=$myRequestObject->all();
         $feedback = Feedback::create($data);
         $feedback->save();

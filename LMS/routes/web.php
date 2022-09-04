@@ -32,21 +32,21 @@ Route::get('/market', function () {
 });
 
 Route::middleware('auth')->group(function (){
-    Route::get('/contact-us', [AdminController::class, 'index'])->name('Contact-Us');
-    Route::get('/contact-us/create', [AdminController::class, 'create'])->name('Contact-Us.create');
-    Route::get('/contact-us/edit/{admin}', [AdminController::class, 'edit'])->name('Contact-Us.edit');
-    Route::post('/contact-us/update/{id}', [AdminController::class, 'update'])->name('Contact-Us.update');
-    Route::post('/contact-us/destroy/{id}', [AdminController::class, 'destroy'])->name('Contact-Us.destroy');
-    Route::post('/contact-us/store', [AdminController::class, 'store'])->name('Contact-Us.store');
+    Route::get('/contact-us', [\App\Http\Controllers\FeedbackController::class, 'index'])->name('Contact-Us');
+    Route::get('/contact-us/create', [\App\Http\Controllers\FeedbackController::class, 'create'])->name('Contact-Us.create');
+    Route::get('/contact-us/edit/{admin}', [\App\Http\Controllers\FeedbackController::class, 'edit'])->name('Contact-Us.edit');
+    Route::post('/contact-us/update/{id}', [\App\Http\Controllers\FeedbackController::class, 'update'])->name('Contact-Us.update');
+    Route::post('/contact-us/destroy/{id}', [\App\Http\Controllers\FeedbackController::class, 'destroy'])->name('Contact-Us.destroy');
+    Route::post('/contact-us/store', [\App\Http\Controllers\FeedbackController::class, 'store'])->name('Contact-Us.store');
 
 });
-
-Route::get('/contact-us',[\App\Http\Controllers\FeedbackController::class,'index'], function () {
-
-    //return view('Pages/ContactUs');
-
-
-});
+//
+//Route::get('/contact-us',[\App\Http\Controllers\FeedbackController::class,'index'], function () {
+//
+//    //return view('Pages/ContactUs');
+//
+//
+//});
 
 Route::get('/order', function () {
     return view('Pages/Order');

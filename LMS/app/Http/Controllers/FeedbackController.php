@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Feedback;
 use Illuminate\Http\Request;
-
+use App\Models\Feedback;
+use Auth;
 class FeedbackController extends Controller
 {
     public function index()
     {
         //
-        return view('Pages/ContactUs');
-    }
+        $feedback = Feedback::all();
+        return view('Pages/ContactUs');    }
 
     /**
      * Store a newly created resource in storage.
@@ -22,10 +22,27 @@ class FeedbackController extends Controller
     public function store(Request  $myRequestObject)
 
     {
-        $data=$myRequestObject->all();
+        $user_id = Auth::user()->id;
+
+//dd(        $user_id );
+
+//        $data=$myRequestObject->all();
+        $data =[
+            //Hint:we cant
+            "course_id" => $user_id,
+            "batch_id" => $user_id,
+            "staff_id" => $user_id,
+            "student_id" => $user_id,
+
+        ] ;
+        $data=array_merge( $data,$myRequestObject->all());
+
+
+//        dd($data);
+
         $feedback = Feedback::create($data);
         $feedback->save();
-        return "Feedback added Successful!";
+        return redirect('/');
     }
 
     /**

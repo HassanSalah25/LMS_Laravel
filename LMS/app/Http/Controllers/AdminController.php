@@ -44,14 +44,15 @@ class AdminController extends Controller
 
     {
         $data=$myRequestObject->all();
-        //
-//        Admin::create($request->validate([
+        $admin = Admin::create($data);
+        $admin->save();
+//        Admin::create($data->validate([
 //            'name'=> 'required',
 //            'password'=> 'required',
 //            'mobile'=> 'required',
 //            'email' => 'required|unique:admins'
 //        ]));
-       // return redirect('/admins/index');
+        return redirect('/admins/');
     }
 
     /**
