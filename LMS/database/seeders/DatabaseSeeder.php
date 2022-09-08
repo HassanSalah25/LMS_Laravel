@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\CourseStudent;
+use App\Models\Role;
+use App\Models\UserRole;
 use Illuminate\Database\Seeder;
 // MAIN Seeder Class by:laravel
 
@@ -56,9 +58,17 @@ class DatabaseSeeder extends Seeder
          Staff::factory()->times(100)->create();
          Student::factory()->times(100)->create();
          User::factory()->times(100)->create();
+<<<<<<< HEAD
          CourseStudent::factory()->times(100)->create();
          Comment::factory()->times(100)->create();
          Post::factory()->times(100)->create();
+=======
+        CourseStudent::factory()->times(100)->create();
+        Comment::factory()->times(100)->create();
+        Post::factory()->times(100)->create();
+        Role::factory()->times(4)->create();
+        UserRole::factory()->times(100)->create();
+>>>>>>> 76e8cc1f379e01f04abfc8945c8153085ae163a2
 
         //way 2
          //$this->call(UsersSeeder::class);
