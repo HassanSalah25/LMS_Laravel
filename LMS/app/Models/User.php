@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable implements JWTSubject
+class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -43,16 +43,11 @@ class User extends Authenticatable implements JWTSubject
 
     // ];
 
-
-    public function getJWTIdentifier()
-    {
-        // TODO: Implement getJWTIdentifier() method.
-        return $this->getKey();
+    public function roles() {
+        return $this->belongsToMany(Role::class, 'user_roles');
+    }
+    public function isAdministrator() {
+        return $this->roles()->where('name', 'admin')->exists();
     }
 
-    public function getJWTCustomClaims()
-    {
-        // TODO: Implement getJWTCustomClaims() method.
-        return [];
-    }
 }

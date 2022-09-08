@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Staff extends Model
+class Staff extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -22,6 +22,12 @@ class Staff extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
+    public function roles() {
+        return $this->belongsToMany(Role::class, 'user_roles');
+    }
+    public function isStaff() {
+        return $this->roles()->where('name', 'staff')->exists();
+    }
     public function course(): HasOne
     {
         return $this->hasOne(Course::class);

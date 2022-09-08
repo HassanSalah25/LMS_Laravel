@@ -40,7 +40,15 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-                /// change to JWT driver
+        'web-admins' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        'web-users' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+        /// change to JWT driver
         'api' => [
             'driver' => 'jwt',
             'provider' => 'users',

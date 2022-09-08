@@ -23,6 +23,7 @@
             <!-- Settings Dropdown--FOR logout and username after login done! -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
 {{--                <div>Auth::user()->name </div>--}}
+                {{--                {{Auth::user()->isAdministrator()}}--}}
 
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -60,8 +61,7 @@
 
 
 
-
-
+            
             <!-- Hamburger ---- drop down for Logout -->
             <div class="-mr-2 flex items-center sm:hidden">
                 <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
@@ -151,8 +151,8 @@
                 <a class="nav-link" href="/dashboard/index">Dashboard  <span class="sr-only">(current)</span></a>
             </li>
 
-
-
+        </ul>
+    </div>
                     <!-- extra in nav bar-->
 {{--                                <li class="nav-item dropdown">--}}
 {{--                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}

@@ -8,7 +8,7 @@ use Conner\Likeable\Likeable;
 
 class Post extends Model
 {
-    use HasFactory, Likeable;
+    use HasFactory;
     protected $table = 'posts';
     protected $fillable = [
         'title',
