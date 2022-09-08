@@ -29,12 +29,9 @@ class AuthController extends Controller
             ];
 
             $validator = Validator::make($request->all(), $rules);
-<<<<<<< HEAD
             
             //error validation message
-=======
-////////////////////////////
->>>>>>> origin/main
+
             if ($validator->fails()) {
                 $code = $this->returnCodeAccordingToInput($validator);
                 return $this->returnValidationError($code, $validator);

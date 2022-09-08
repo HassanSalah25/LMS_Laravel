@@ -10,6 +10,11 @@ use App\Http\Controllers\PostController;
 
 
 
+
+
+
+
+/////////////////
 Route::group(
     ['middleware' => ['auth'],//add other middlewares
     'namespace' => 'posts',
@@ -37,6 +42,8 @@ Route::get('/', function () {
     // return  ' HOlaa ! <h2> <a href="/dashboard"> </h2>';
 
 });
+
+
 
 
 
@@ -191,5 +198,35 @@ Route::middleware('auth')->group(function (){
 
 });
 
+
+// landing CRUD
+Route::middleware('auth')->group(function (){
+
+   // Route::get('/landing', function(){ return  view('landing.index'); }  );
+    Route::get('/courses/create', [CoursesController::class, 'create'])->name('courses.create');
+    Route::get  ('/courses/edit/{course}', [CoursesController::class, 'edit'])->name('courses.edit');
+    Route::post('/courses/update/{id}', [CoursesController::class, 'update'])->name('courses.update');
+    Route::post('/courses/destroy/{id}', [CoursesController::class, 'destroy'])->name('courses.destroy');
+    Route::post('/courses/create', [CoursesController::class, 'store'])->name('courses.store');
+
+});
+
+
+
 ///seperated file for the Auth procees ++ import
 require __DIR__.'/auth.php';
+
+// Route::get('login', function () {
+//     // return view('welcome');
+//     // return view('Home/index');
+//     //return view('Maindashboard/index');
+//     return  ' HOlaa ! ';
+
+// })->name('login');
+
+
+Route::get('/landing', function(){
+    
+    return  view('Landing.index'); }  );
+
+
