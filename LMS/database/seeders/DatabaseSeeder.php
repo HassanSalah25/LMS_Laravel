@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
             //way 1
         // # call the seeder for your table
          //$this->call(AdminsSeeder::class);
-          Admin::factory()->times(100)->create();
+         Admin::factory()->times(100)->create();
          Batch::factory()->times(100)->create();
          Category::factory()->times(100)->create();
          Certification::factory()->times(100)->create();

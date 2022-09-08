@@ -11,8 +11,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;//Needed : for the JWT
 
 class Admin extends Authenticatable implements JWTSubject
 {
-    use HasFactory;
-    protected $table = 'admins';
+     protected $table = 'admins';
     public $timestamps = true ;
     use HasApiTokens, HasFactory, Notifiable;
 

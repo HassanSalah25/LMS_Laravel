@@ -243,4 +243,5 @@ table.table .avatar {
     font-size: 13px;
 }
 </style>
+
 @endsection

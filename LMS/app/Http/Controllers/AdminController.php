@@ -43,7 +43,7 @@ class AdminController extends Controller
     public function store(StoreUserRequest  $myRequestObject)
 
     {
-        $data=$myRequestObject->all();
+        $data=$myRequestObject->all() ;
         $admin = Admin::create($data);
         $admin->save();
         Admin::create($data->validate([
