@@ -45,6 +45,7 @@ class DatabaseSeeder extends Seeder
             //way 1
         // # call the seeder for your table
          //$this->call(AdminsSeeder::class);
+<<<<<<< HEAD
          Admin::factory()->times(5)->create();
          Batch::factory()->times(5)->create();
          Category::factory()->times(5)->create();
@@ -64,6 +65,27 @@ class DatabaseSeeder extends Seeder
         Role::factory()->times(4)->create();
         UserRole::factory()->times(5)->create();
 
+=======
+                Admin::factory()->times(100)->create();
+                Batch::factory()->times(100)->create();
+                Category::factory()->times(100)->create();
+                Certification::factory()->times(100)->create();
+                CourseCategory::factory()->times(100)->create();
+                Course::factory()->times(100)->create();
+                Enroll::factory()->times(100)->create();
+                Feedback::factory()->times(100)->create();
+                Lesson::factory()->times(100)->create();
+                Module::factory()->times(100)->create();
+                Staff::factory()->times(100)->create();
+                Student::factory()->times(100)->create();
+                User::factory()->times(100)->create();
+                CourseStudent::factory()->times(100)->create();
+                Comment::factory()->times(100)->create();
+                Post::factory()->times(100)->create();
+                Role::factory()->times(4)->create();
+                UserRole::factory()->times(100)->create();
+ 
+>>>>>>> 2317c7ff008a1c6dc57a7b0c8cdd8eb511346a4a
         //way 2
          //$this->call(UsersSeeder::class);
 
