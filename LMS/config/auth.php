@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'students',
     ],
 
     /*
@@ -38,16 +38,9 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'students',
         ],
-        'web-admins' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
-        'web-users' => [
-            'driver' => 'session',
-            'provider' => 'admins',
-        ],
+        
         /// change to JWT driver
         'api' => [
             'driver' => 'jwt',
@@ -92,7 +85,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-
+        'students' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Student::class,
+        ],
 
         // 'users' => [
         //     'driver' => 'database',
@@ -121,6 +117,11 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
+        ],
+        'students' => [
+            'provider' => 'students',
+            'table' => 'password_resets',
+            'expire' => 60,
         ],
     ],
 

@@ -12,12 +12,12 @@ class CourseStudent extends Model
     protected $guarded=[
         ];
 
-    public function course ()
+    public function course()
     {
         return $this->hasMany(Course::class);
     }
-    public function student ()
-        {
-            return $this->hasMany(Student::class);
-        }
+    public function student()
+    {
+        return $this->hasMany(Student::class);
+    }
 }

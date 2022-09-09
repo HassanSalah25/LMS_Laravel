@@ -17,11 +17,11 @@ class LessonFactory extends Factory
             //
             'created_at'    => $this->faker-> dateTimeThisMonth,
             'updated_at'    => $this->faker-> dateTimeThisMonth,
-            'module_id'          => $this->faker->text,
+            'module_id'          => $this->faker->randomDigit(),
             'name'          => $this->faker->name,
-            'description'          => $this->faker->text,
+            'description'          => $this->faker->realTextBetween(160,191),
             'position'          => $this->faker->address,
-            'is_active'          => $this->faker->text,
+            'is_active'          => $this->faker->realTextBetween(160,191),
              
         ];
     }

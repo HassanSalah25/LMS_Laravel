@@ -18,11 +18,11 @@ class CreateCoursesTable extends Migration
             //$table->foreignkey
             $table->timestamps();
             $table->string('name');
-            $table->string('description');
-            $table->string('cover_image');
+            $table->text('description');
+            $table->text('cover_image');
             $table->string('hours');
             $table->string('certificate_image');
-            $table->string('position');
+            $table->text('position');
             $table->string('is_active');
             $table->string('student_id');
             $table->string('created_by');

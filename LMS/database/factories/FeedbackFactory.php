@@ -21,9 +21,9 @@ class FeedbackFactory extends Factory
             'batch_id'          => $this->faker->randomDigit,
             'staff_id'          => $this->faker->randomDigit,
             'student_id'          => $this->faker->randomDigit,
-            'title'          => $this->faker->text,
+            'title'          => $this->faker->realTextBetween(160,191),
             'rating'          => $this->faker->address,
-            'review'          => $this->faker->text,
+            'review'          => $this->faker->realTextBetween(160,191),
             'is_active'          => $this->faker->randomDigit,
             'deleted_at'          => $this->faker->datetimeThisMonth,
             

@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
         // ADD constrains To yout DB
             
         //string limit contrains
-        Schema::defaultStringLength(99999999);
+        Schema::defaultStringLength(191);
 
     }
 }

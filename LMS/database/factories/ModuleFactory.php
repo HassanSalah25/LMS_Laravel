@@ -20,7 +20,7 @@ class ModuleFactory extends Factory
             'course_id'          => $this->faker->randomDigit,
             'name'          => $this->faker->name,
              'position'          => $this->faker->address,
-            'is_active'          => $this->faker->text,
+            'is_active'          => $this->faker->realTextBetween(160,191),
             'created_by'         => $this->faker->randomDigit,
 
         ];

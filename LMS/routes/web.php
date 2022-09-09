@@ -171,7 +171,7 @@ Route::middleware('auth')->group(function (){
     Route::post('/students/update/{id}', [StudentController::class, 'update'])->name('Students.update');
     Route::post('/students/destroy/{id}', [StudentController::class, 'destroy'])->name('Students.destroy');
     Route::post('/students/create', [StudentController::class, 'store'])->name('Students.store');
-
+    Route::post('/students/addCourse/{id}',[StudentController::class, 'addCourse'])->name('Students.addCourse');
 });
 
 // Staff CRUD

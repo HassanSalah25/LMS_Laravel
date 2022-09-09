@@ -29,17 +29,13 @@ class Student extends Authenticatable
     public function isStudent() {
         return $this->roles()->where('name', 'student')->exists();
     }
-     public function course()
+     public function courses()
     {
-        return $this->belongsTo(Course::class);
+        return $this->belongsToMany(Course::class,'course_students');
     }
      public function batch(): BelongsTo
     {
         return $this->belongsto(Batch::class);
-    }
-    public function courseStudent(): BelongsTo
-    {
-        return $this->hasMany(CourseStudent::class);
     }
     public function enroll(): BelongsTo
     {

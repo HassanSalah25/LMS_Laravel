@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
+use App\Models\CourseStudent;
 use Illuminate\Http\Request;
 use App\Models\Student;
 
@@ -14,9 +16,15 @@ class StudentController extends Controller
      */
     public function index()
     {
+        
         //call model all columns !
-        return view('Student.index', [
-            'Students' => Student::all()
+ 
+            # code...
+        return view('Student.index1', [
+            'Students' => Student::all(),
+            'courses' => Course::all(),
+            'student_auth' => Student::find(auth()->user()->id),
+            
         ]);
     }
 
@@ -69,10 +77,20 @@ class StudentController extends Controller
     public function edit(Student $Student)
     {
         //
+        
         return view('Student.edit', [//the next parameters
             'student' => $Student // assign new model $Student TO old model 'student'
         ]);
     }
+
+    public function addCourse($id)
+    {
+        //
+        $course = Course::find($id);	
+        $course->students()->sync(auth()->user()->id);
+        return redirect('students');
+    }
+
 
     /**
      * Update the specified resource in storage.

@@ -23,9 +23,9 @@ class Course extends Model
         return $this->belongsTo(Batch::class);
     }
 
-    public function student()
+    public function students()
     {
-        return $this->belongsTo(Student::class);
+        return $this->belongsToMany(Student::class,'course_students');
     }
 
     public function feedback()
@@ -41,13 +41,7 @@ class Course extends Model
     {
         return $this->belongsto(Category::class);
     }
-
-    public function courseStudent(): BelongsTo
-    {
-        return $this->hasMany(CourseStudent::class);
-    }
-
-    public function enroll(): BelongsTo
+    public function enroll()
     {
         return $this->hasMany(Enroll::class);
     }
