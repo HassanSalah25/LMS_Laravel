@@ -25,13 +25,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         // ADD constrains To yout DB
-            
+
         //string limit contrains
-<<<<<<< HEAD
-        Schema::defaultStringLength(191);
-=======
-        Schema::defaultStringLength(500);
->>>>>>> 2317c7ff008a1c6dc57a7b0c8cdd8eb511346a4a
+          Schema::defaultStringLength(500);
 
     }
 }

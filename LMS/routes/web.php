@@ -224,9 +224,9 @@ require __DIR__.'/auth.php';
 
 // })->name('login');
 
-
-Route::get('/landing', function(){
-    
-    return  view('Landing.index'); }  );
-
-
+//
+//Route::get('/landing', function(){
+//
+//    return  view('Landing.index'); }  );
+//
+//

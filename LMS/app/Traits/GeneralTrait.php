@@ -5,7 +5,10 @@ namespace App\Traits;
 
 trait GeneralTrait
 {
-
+            //EXTRA methods thats can be called in where of the APP
+    //
+    //
+    //
     public function getCurrentLang()
     {
         return app()->getLocale();

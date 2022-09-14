@@ -40,7 +40,7 @@ return [
             'driver' => 'session',
             'provider' => 'students',
         ],
-        
+
         /// change to JWT driver
         'api' => [
             'driver' => 'jwt',

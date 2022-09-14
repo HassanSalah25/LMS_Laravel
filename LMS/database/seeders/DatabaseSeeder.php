@@ -41,54 +41,34 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //Note : must take care of the way of sorting same as factory
+            //Note : must take care of the way of sorting same as factory
             //way 1
-        // # call the seeder for your table
-         //$this->call(AdminsSeeder::class);
-<<<<<<< HEAD
-         Admin::factory()->times(5)->create();
-         Batch::factory()->times(5)->create();
-         Category::factory()->times(5)->create();
-         Certification::factory()->times(5)->create();
-         CourseCategory::factory()->times(5)->create();
-         Course::factory()->times(5)->create();
-         Enroll::factory()->times(5)->create();
-         Feedback::factory()->times(5)->create();
-         Lesson::factory()->times(5)->create();
-         Module::factory()->times(5)->create();
-         Staff::factory()->times(5)->create();
-         Student::factory()->times(5)->create();
-         User::factory()->times(5)->create();
-        CourseStudent::factory()->times(5)->create();
-        Comment::factory()->times(5)->create();
-        Post::factory()->times(5)->create();
-        Role::factory()->times(4)->create();
-        UserRole::factory()->times(5)->create();
+            // # call the seeder for your table
+            //$this->call(AdminsSeeder::class);
+            Admin::factory()->times(5)->create();
+            Batch::factory()->times(5)->create();
+            Category::factory()->times(5)->create();
+            Certification::factory()->times(5)->create();
+            CourseCategory::factory()->times(5)->create();
+            Course::factory()->times(5)->create();
+            Enroll::factory()->times(5)->create();
+            Feedback::factory()->times(5)->create();
+            Lesson::factory()->times(5)->create();
+            Module::factory()->times(5)->create();
+            Staff::factory()->times(5)->create();
+            Student::factory()->times(5)->create();
+            User::factory()->times(5)->create();
+            CourseStudent::factory()->times(5)->create();
+            Comment::factory()->times(5)->create();
+            Post::factory()->times(5)->create();
+            Role::factory()->times(4)->create();
+            UserRole::factory()->times(5)->create();
 
-=======
-                Admin::factory()->times(100)->create();
-                Batch::factory()->times(100)->create();
-                Category::factory()->times(100)->create();
-                Certification::factory()->times(100)->create();
-                CourseCategory::factory()->times(100)->create();
-                Course::factory()->times(100)->create();
-                Enroll::factory()->times(100)->create();
-                Feedback::factory()->times(100)->create();
-                Lesson::factory()->times(100)->create();
-                Module::factory()->times(100)->create();
-                Staff::factory()->times(100)->create();
-                Student::factory()->times(100)->create();
-                User::factory()->times(100)->create();
-                CourseStudent::factory()->times(100)->create();
-                Comment::factory()->times(100)->create();
-                Post::factory()->times(100)->create();
-                Role::factory()->times(4)->create();
-                UserRole::factory()->times(100)->create();
- 
->>>>>>> 2317c7ff008a1c6dc57a7b0c8cdd8eb511346a4a
-        //way 2
-         //$this->call(UsersSeeder::class);
 
-        // \App\Models\User::factory(10)->create();
+
+            //way 2
+            //$this->call(UsersSeeder::class);
+
+            // \App\Models\User::factory(10)->create();
     }
 }
