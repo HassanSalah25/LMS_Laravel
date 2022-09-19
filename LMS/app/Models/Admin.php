@@ -11,7 +11,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;//Needed : for the JWT
 
 class Admin extends Authenticatable
 {
-     protected $table = 'admins';
+
     public $timestamps = true ;
     use HasApiTokens, HasFactory, Notifiable;
 

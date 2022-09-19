@@ -92,6 +92,8 @@ Route::get('/market', function () {
 
 });
 
+
+
 Route::middleware('auth')->group(function (){
     Route::get('/contact-us', [\App\Http\Controllers\FeedbackController::class, 'index'])->name('Contact-Us');
     Route::get('/contact-us/create', [\App\Http\Controllers\FeedbackController::class, 'create'])->name('Contact-Us.create');
@@ -211,6 +213,20 @@ Route::middleware('auth')->group(function (){
 
 });
 
+// Dashboard AND Cards for ADMINS
+Route::middleware('auth')->group(function (){
+
+    Route::get('/dash', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dash');
+    Route::get('/dash/create', [\App\Http\Controllers\DashboardController::class, 'create'])->name('dash.create');
+    Route::get  ('/dash/edit/{course}', [\App\Http\Controllers\DashboardController::class, 'edit'])->name('dash.edit');
+    Route::post('/dash/update/{id}', [\App\Http\Controllers\DashboardController::class, 'update'])->name('dash.update');
+    Route::post('/dash/destroy/{id}', [\App\Http\Controllers\DashboardController::class, 'destroy'])->name('dash.destroy');
+    Route::post('/dash/create', [\App\Http\Controllers\DashboardController::class, 'store'])->name('dash.store');
+
+});
+
+
+
 
 
 ///seperated file for the Auth procees ++ import
@@ -230,3 +246,4 @@ require __DIR__.'/auth.php';
 //    return  view('Landing.index'); }  );
 //
 //
+

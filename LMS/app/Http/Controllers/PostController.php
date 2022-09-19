@@ -10,7 +10,7 @@ class PostController extends Controller
 
     public function postList()
     {
-        $posts = Post::all();
+        $posts = Post::all();// select * from
 //        dd($posts);
         return view('posts.posts-list',
             [
