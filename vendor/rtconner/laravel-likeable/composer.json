@@ -1,0 +1,54 @@
+{
+	"name": "rtconner/laravel-likeable",
+	"description": "Trait for Laravel Eloquent models to allow easy implementation of a 'like' or 'favorite' or 'remember' feature.",
+	"license": "MIT",
+	"homepage": "https://smartersoftware.net/packages/laravel-likeable-favorite",
+	"keywords": ["trait", "laravel", "laravel5", "eloquent", "likeable", "likable", "like", "remember", "follow", "favorite", "favourite"],
+	"authors": [
+		{
+			"name": "Robert Conner",
+			"email": "rtconner@smarter.bz"
+		}
+	],
+	"require": {
+		"php": "^7.3|^8.0",
+		"illuminate/database": ">=8.0",
+		"illuminate/support": ">=8.0"
+	},
+	"require-dev": {
+		"orchestra/testbench": "6.*",
+		"phpunit/phpunit": "9.*",
+		"mockery/mockery": "1.*",
+		"squizlabs/php_codesniffer": "3.*"
+	},
+	"autoload": {
+		"psr-4": {
+			"Conner\\Likeable\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Conner\\Tests\\Likeable\\": "tests/"
+		}
+	},
+	"scripts": {
+        "test": "vendor/bin/phpunit --color=always",
+        "check": [
+            "php-cs-fixer fix --ansi --dry-run --diff .",
+            "phpcs --report-width=200 --report-summary  --report-full src/ tests/ --standard=PSR2 -n",
+            "phpmd src/,tests/ text ./phpmd.xml.dist"
+        ],
+        "fix": [
+            "php-cs-fixer fix --ansi ."
+        ]
+    },
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Conner\\Likeable\\LikeableServiceProvider"
+			]
+		}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}
